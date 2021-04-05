@@ -25,21 +25,41 @@ export default new Vuex.Store({
       name: 'Puma Thurman',
       age: '15',
       occupation: 'plumber',
-      description: 'unclogging drains is my idea of a dream job'
+      description: 'unclogging drains is my idea of a dream job',
+      imageName: require('../Assets/CatUsers/1001.jpg')
 
     },
 
     {name: 'Cat Damon',
     age: '30',
     occupation: 'actor',
-    description: 'shakespeare is my middle name'
+    description: 'shakespeare is my middle name',
+    imageName: require('../Assets/CatUsers/1002.jpg')
 },
 
 {name: 'Jennipurr Aniston',
     age: '21',
     occupation: 'truck driver',
-    description: 'switching lanes on the freeway is my specialty'
+    description: 'switching lanes on the freeway is my specialty',
+    imageName: require('../Assets/CatUsers/1002.jpg')
+},
+
+
+{name: 'Fleas Witherspoon',
+    age: '25',
+    occupation: 'software developer',
+    description: 'hello world!',
+    imageName: require('../Assets/CatUsers/1003.jpg')
+},
+
+{name: 'Meowly Cyrus',
+age: '27',
+occupation: 'singer',
+description: 'I placed 5th in Americat Idol!',
+imageName: require('../Assets/CatUsers/1004.jpg')
 }
+
+
 
 ]
 

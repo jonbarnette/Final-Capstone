@@ -14,29 +14,14 @@ import UserDisplay from '@/components/UserDisplay.vue'
 
 
 export default {
-  name: "user-list",
+  name: 'user-list',
   components: {
     UserDisplay
     
   
   },
 
-  data() {
-    return {
-      occupationFilter: "",
-    };
-  },
-  computed: {
-    filteredCats() {
-      const filteredCats = this.$store.state.catlist;
-      console.log(filteredCats);
-      return filteredCats.filter((user) => {
-        return this.occupationFilter === ""
-          ? true
-          : this.occupationFilter === user.occupation;
-      });
-    },
-  },
+  
 };
 </script>
 
