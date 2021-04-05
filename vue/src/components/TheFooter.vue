@@ -1,17 +1,9 @@
 <template>
-  <div>
-    <div>
-      <p>&#169; {{ copyText }}</p>
-    </div>
-    <div class="divTableHeading">
-      <div class="divTableRow">
-        <div class="divTableHead"></div>
-        <span class="divTableHead">Contact</span>
-        <span class="divTableHead">Age</span>
-        <div class="divTableHead">Occupation</div>
-        <div class="divTableHead">Description</div>
-      </div>
-    </div>
+  <div class="container">
+      <div id="copycat">&#169; {{ copyText }}</div>
+        <div id="contact">Contact</div>
+        <div id="aboutUs">About Us</div>
+        <div id="admin">Admin Login</div>
   </div>
 </template>
 
@@ -27,4 +19,14 @@ export default {
 </script>
 
 <style>
+.container {
+    display: flex;
+    float: center;
+    text-align: center;
+    padding: auto;
+    justify-content: space-between;
+    margin: 1em;
+
+}
+
 </style>
