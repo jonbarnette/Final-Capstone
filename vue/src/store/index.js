@@ -19,7 +19,30 @@ if(currentToken != null) {
 export default new Vuex.Store({
   state: {
     token: currentToken || '',
-    user: currentUser || {}
+    user: currentUser || {},
+    catlist: [ {
+      
+      name: 'Puma Thurman',
+      age: '15',
+      occupation: 'plumber',
+      description: 'unclogging drains is my idea of a dream job'
+
+    },
+
+    {name: 'Cat Damon',
+    age: '30',
+    occupation: 'actor',
+    description: 'shakespeare is my middle name'
+},
+
+{name: 'Jennipurr Aniston',
+    age: '21',
+    occupation: 'truck driver',
+    description: 'switching lanes on the freeway is my specialty'
+}
+
+]
+
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
