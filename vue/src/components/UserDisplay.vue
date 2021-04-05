@@ -86,8 +86,9 @@ data() {
   height: 50em;
   width: auto;
 }
-.background {
+* {
   background-color: #16ffbd;
+  color:  #C34271;
 }
 
 .divTableImage {
@@ -101,7 +102,7 @@ data() {
   height: auto;
 }
 
-.overlay {
+/* .overlay {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -112,13 +113,13 @@ data() {
   opacity: 0;
   transition: .5s ease;
   background-color: #008CBA;
-}
+} */
 
-.container:hover .overlay {
+/* .container:hover .overlay {
   opacity: 1;
-}
+} */
 
-.divTableCell {
+/* .divTableCell {
   color: white;
   font-size: 20px;
   position: absolute;
@@ -128,5 +129,5 @@ data() {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
-}
+} */
 </style>

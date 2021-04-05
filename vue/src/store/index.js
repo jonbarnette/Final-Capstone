@@ -41,7 +41,7 @@ export default new Vuex.Store({
     age: '21',
     occupation: 'truck driver',
     description: 'switching lanes on the freeway is my specialty',
-    imageName: require('../Assets/CatUsers/1002.jpg')
+    imageName: require('../Assets/CatUsers/1003.jpg')
 },
 
 
@@ -49,14 +49,14 @@ export default new Vuex.Store({
     age: '25',
     occupation: 'software developer',
     description: 'hello world!',
-    imageName: require('../Assets/CatUsers/1003.jpg')
+    imageName: require('../Assets/CatUsers/1004.jpg')
 },
 
 {name: 'Meowly Cyrus',
 age: '27',
 occupation: 'singer',
 description: 'I placed 5th in Americat Idol!',
-imageName: require('../Assets/CatUsers/1004.jpg')
+imageName: require('../Assets/CatUsers/1005.jpeg')
 }
 
 
