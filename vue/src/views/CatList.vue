@@ -1,14 +1,14 @@
 <template>
-  <user-display></user-display>
+  <user-List></user-List>
 </template>
 
 <script>
 
-import UserDisplay from "@/components/UserDisplay.vue";
+import UserList from "@/components/UserList.vue";
 
 export default {
     components: {
-        UserDisplay,
+        UserList,
     }
 
 }
