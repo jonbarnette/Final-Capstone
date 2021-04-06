@@ -9,13 +9,12 @@
    
     <router-view />
      <user-display />
-    <user-list />
     <the-footer></the-footer>
   </div>
 </template>
 
 <script>
-import UserList from "@/components/UserList.vue";
+
 import UserDisplay from "@/components/UserDisplay.vue"
 import TheFooter from "@/components/TheFooter.vue"
 
@@ -23,7 +22,7 @@ import TheFooter from "@/components/TheFooter.vue"
 export default {
   components: {
 
-    UserList,
+    
     UserDisplay,
     TheFooter,
     

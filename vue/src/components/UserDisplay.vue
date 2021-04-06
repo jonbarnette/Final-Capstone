@@ -50,6 +50,9 @@
 </template>
 
 <script>
+
+import catService from '@/services/CatService.js';
+
 export default {
 
   name: "user-display",
@@ -57,6 +60,7 @@ export default {
 data() {
     return {
       occupationFilter: "",
+      catsArray: [],
     };
   },
   computed: {
@@ -70,6 +74,11 @@ data() {
       });
     },
   },
+  created() {
+    catService.getCatlist().then(response => {
+      this.catsArray = response.data;
+    })
+  }
 
 };
 
