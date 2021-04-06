@@ -26,7 +26,7 @@
             <div class="divTableHead">Name</div>
             <div class="divTableHead">Age</div>
             <div class="divTableHead">Occupation</div>
-            <div class="divTableHead">Description</div>
+            <div class="divTableHead">Tagline</div>
           
           </div>
         </div>

@@ -1,29 +1,22 @@
 <template>
   <div id="app">
-    <div id="nav">
-
-      <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;
-      <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>&nbsp;|&nbsp;
-      <router-link v-bind:to="{name:'cats'}">Cat List</router-link>
-    </div>
-   
-    <router-view />
-     <user-display />
+   <the-header></the-header>
+     
     <the-footer></the-footer>
   </div>
 </template>
 
 <script>
 
-import UserDisplay from "@/components/UserDisplay.vue"
-import TheFooter from "@/components/TheFooter.vue"
+
+import TheFooter from "@/components/TheFooter.vue";
+import TheHeader from "@/components/TheHeader.vue";
 
 
 export default {
   components: {
 
-    
-    UserDisplay,
+    TheHeader,
     TheFooter,
     
   },

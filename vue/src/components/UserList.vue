@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a href="#">List of Cat Users</a>
+    
     <user-display
     v-for="cat in filteredCats"
     v-bind:key="cat.name"

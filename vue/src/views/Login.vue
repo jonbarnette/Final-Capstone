@@ -1,7 +1,7 @@
 <template>
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Hello! Please Sign In!</h1>
       <div
         class="alert alert-danger"
         role="alert"
@@ -74,3 +74,12 @@ export default {
   }
 };
 </script>
+<style>
+input[type=password], [type=submit] {
+    margin: 30px;
+    width: 10%;
+    padding: 12px 14px;
+    border: 2px solid green;
+    border-radius: 6px;
+}
+</style>
