@@ -9,7 +9,7 @@ public interface CatListDAO {
 	
 	List<CatList> retrieveCatList();
 	
-	List<CatList> retrieveCatDetails(Long catId); //will give details for the cat selected
+	List<CatList> retrieveCatDetails(int catId); //will give details for the cat selected
 	
 	
 

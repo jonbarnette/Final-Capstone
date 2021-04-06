@@ -10,15 +10,15 @@ public class CatList {
 	private String tagline; //this is the quick summary shown on the list  this is ONLY ON THE LIST
 	private String address; //this is the last seen location
 	private String summary; //this is the full summary in the details page
-	private Long catId; //will be the foreign key for the database
+	private int catId; //will be the foreign key for the database
 	
 	
 	
 	
-	public Long getCatId() {
+	public int getCatId() {
 		return catId;
 	}
-	public void setCatId(Long catId) {
+	public void setCatId(int catId) {
 		this.catId = catId;
 	}
 	public String getName() {
