@@ -9,6 +9,8 @@ public interface CatListDAO {
 	
 	List<CatList> retrieveCatList();
 	
-	List<CatList> retrieveCatDetails(Long catId);
+	List<CatList> retrieveCatDetails(Long catId); //will give details for the cat selected
+	
+	
 
 }
