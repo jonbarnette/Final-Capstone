@@ -1,8 +1,10 @@
 <template>
   <div id="nav">
     <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;
-    <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>&nbsp;|&nbsp;
-    <router-link v-bind:to="{ name: 'cats' }">Cat List</router-link>
+    <router-link v-bind:to="{ name: 'cats' }">Cat List</router-link>&nbsp;|&nbsp;
+    <router-link v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login</router-link>
+    <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
+    
 
     <router-view></router-view>
   </div>
@@ -17,6 +19,8 @@ export default {};
 <style>
 
 #nav {
+    font-size: 1.5em;
     text-align: center;
+    margin: 1em;
 }
 </style>

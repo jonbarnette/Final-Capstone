@@ -1,7 +1,7 @@
 <template>
 
   <div class="home">
-    <h1>Home</h1>
+    <h1>Putting cats to work since 2021</h1>
     <p>Under Catstruction. Please excuse the meows</p>
     <img class="water-cat" src='../Assets/CatUsers/1015.jpg' />
   </div>
