@@ -20,7 +20,7 @@
         <div class="divTableBody">
           <div class="divTableRow" v-for="cat in filteredCats" v-bind:key="cat.name">
             <div class="divTableCell">
-                <img class="image" v-bind:src="getImageURL(cat.imageName)" />
+                <!-- <img class="image" v-bind:src="getImageURL(cat.imageName)" /> -->
             </div>
             
             <div class="divTableCell">{{ cat.name }}</div>
@@ -60,9 +60,9 @@ data() {
   },
 
   methods: {
-    getImageURL(pic) {
-      return require('../Assets/CatUsers/' + pic);
-    },
+    // getImageURL(pic) {
+    //   return require('../Assets/CatUsers/' + pic);
+    // },
     viewCatList() {
       this.$router.push('/cats');
     }
