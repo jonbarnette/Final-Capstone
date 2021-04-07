@@ -20,8 +20,8 @@
         <div class="divTableBody">
           <div class="divTableRow" v-for="cat in filteredCats" v-bind:key="cat.name">
             <div class="divTableCell">
-                <img class="image" v-bind:src="getImageURL(cat.imageName)" />
-            </div>
+                <!-- <img class="image" v-bind:src="getImageURL(cat.imageName)" /> -->
+            </div> 
             
             <div class="divTableCell">{{ cat.name }}</div>
             <div class="divTableCell">{{ cat.age }}</div>
@@ -54,15 +54,15 @@ data() {
      filteredCats() {
          return this.catsArray.filter((cat) => {  
               console.log(this.occupationFilter);
-             return this.occupationFilter === '' ? true : this.occupationFilter == cat.occupation;
+             return cat.occupation.toLowerCase().includes(this.occupationFilter.toLowerCase());
          });
      }
   },
 
   methods: {
-    getImageURL(pic) {
-      return require('../Assets/CatUsers/' + pic);
-    },
+    // getImageURL(pic) {
+    //   return require('../Assets/CatUsers/' + pic);
+    // },
     viewCatList() {
       this.$router.push('/cats');
     }
