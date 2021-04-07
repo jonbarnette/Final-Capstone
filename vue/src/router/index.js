@@ -6,6 +6,8 @@ import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
 import CatList from '../views/CatList.vue'
+import Account from '../views/Account.vue'
+import CatDetails from '../views/CatDetails.vue'
 
 Vue.use(Router)
 
@@ -60,7 +62,23 @@ const router = new Router({
             meta: {
                 requiresAuth: false
             }
+        },
+        {
+          path: "/account",
+          name: "account",
+          component: Account,
+          meta: {
+              requiresAuth: false
+          }
+      },
+      {
+        path: "/catdetails",
+        name: "catdetails",
+        component: CatDetails,
+        meta: {
+            requiresAuth: true
         }
+    }
 
     ]
 })
