@@ -23,7 +23,8 @@
                 <!-- <img class="image" v-bind:src="getImageURL(cat.imageName)" /> -->
             </div> 
             
-            <div class="divTableCell">{{ cat.name }}</div>
+            <div class="divTableCell" v-on:click="toCatDetails()">{{cat.name}}</div>
+            
             <div class="divTableCell">{{ cat.age }}</div>
             <div class="divTableCell">{{ cat.occupation }}</div>
             <div class="divTableCell">{{ cat.tagline }}</div>
@@ -65,9 +66,13 @@ data() {
     // },
     viewCatList() {
       this.$router.push('/cats');
-    }
-  },
+    },
   
+    toCatDetails() {
+      this.$router.push('/catdetails');
+    },
+  },
+
   created() {
     catService.getCatList().then((response) => {
       this.catsArray = response.data;

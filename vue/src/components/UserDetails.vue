@@ -1,88 +1,48 @@
 <template>
-  <!-- <div class="background">
-
   <div>
-   <img class="catimage"
+    <div class="placeFrequented">
+      <h3>List Of Places Frequented</h3>
 
-   src="../Assets/CatUsers/3000.jpg"
-   
-   />
-
-
-  </div>
-  
-  </div> -->
-<div>
-    <div id="searchUsers">
-        <label for="occupation">Enter occupation:</label>
-        <input type="text" name="occupation" v-model="occupationFilter" />
-            
+      <p>Places placeholder</p>
     </div>
-<div id="main-div">
-      <div class="divTable minimalistBlack" v-show="filteredCats.length > 0">
-        <div class="divTableHeading">
-          <div class="divTableRow">
-            <div class="divTableHead"></div>
-            <div class="divTableHead">Name</div>
-            <div class="divTableHead">Age</div>
-            <div class="divTableHead">Occupation</div>
-            <div class="divTableHead">Tagline</div>
-          
-          </div>
-        </div>
-        <div class="divTableBody">
-          <div class="divTableRow" v-for="cat in filteredCats" v-bind:key="cat.name">
-            <div class="divTableCell">
-                <img class="image" v-bind:src="cat.imageName" />
-            </div>
-            
-            <div class="divTableCell">{{ cat.name }}</div>
-            <div class="divTableCell">{{ cat.age }}</div>
-            <div class="divTableCell">{{ cat.occupation }}</div>
-            <div class="divTableCell">{{ cat.description }}</div>
-           
-          </div>
-        </div>
-      </div>
+    <div class="summaryDetail">
+      <h3>Cat Summary</h3>
     </div>
-  </div>
+    <div id="userBio">
+      <div>Name:{{ cat.name }}</div>
 
+      <div>Lives</div>
+      <div>Occupation</div>
+      <div>Breed</div>
+      <div>Color</div>
+    </div>
+    
+  </div>
 </template>
 
 <script>
-
-import catService from '@/services/CatService.js';
+import catService from "@/services/CatService.js";
 
 export default {
+  name: "user-details",
 
-  name: "user-display",
-  props: ["user"],
-data() {
+  data() {
     return {
-      occupationFilter: "",
       catsArray: [],
     };
   },
-  computed: {
-    filteredCats() {
-      const filteredCats = this.$store.state.catlist;
-      console.log(filteredCats);
-      return filteredCats.filter((cat) => {
-        return this.occupationFilter === ""
-          ? true
-          : this.occupationFilter === cat.occupation;
+
+  methods: {
+    viewCatDetails() {
+      this.$router.push("/catdetails");
+    },
+    created() {
+      catService.getCatDetails().then((response) => {
+        this.catsArray = response.data;
       });
     },
   },
-  created() {
-    catService.getCatlist().then(response => {
-      this.catsArray = response.data;
-    })
-  }
-
 };
-
-
 </script>
 
 
@@ -90,7 +50,7 @@ data() {
 <style>
 * {
   background-color: #16ffbd;
-  color:  #C34271;
+  color: #c34271;
 }
 
 .image {
@@ -128,20 +88,19 @@ data() {
   text-align: center;
 } */
 
-
 #main-div {
-    margin: 30px;
+  margin: 30px;
 }
 #searchHomes {
-    margin: 30px;
+  margin: 30px;
 }
 
-input[type=text] {
-    margin: 30px;
-    width: 10%;
-    padding: 12px 14px;
-    border: 2px solid green;
-    border-radius: 6px;
+input[type="text"] {
+  margin: 30px;
+  width: 10%;
+  padding: 12px 14px;
+  border: 2px solid green;
+  border-radius: 6px;
 }
 
 div.minimalistBlack {
@@ -155,13 +114,11 @@ div.minimalistBlack {
 .divTable.minimalistBlack .divTableHead {
   border: 1px solid #000000;
   padding: 5px 4px;
-  
 }
 .divTable.minimalistBlack .divTableBody .divTableCell {
   font-size: 30px;
   vertical-align: middle;
   text-align: center;
-  
 }
 .divTable.minimalistBlack .divTableHeading {
   background: #1dff2c;
@@ -198,7 +155,6 @@ div.minimalistBlack {
 .divTableCell,
 .divTableHead {
   display: table-cell;
-  
 }
 .divTableHeading {
   display: table-header-group;

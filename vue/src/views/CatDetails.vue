@@ -1,17 +1,25 @@
 <template>
-
+  
   <div class="catdetails">
     <h1>Put Details Here Meow!</h1>
-    <p>Under Catstruction. Please excuse the meows</p>
-    <img class="water-cat" src='../Assets/CatUsers/1015.jpg' />
+  
+    <user-details></user-details>
+   
+    <!-- <p>Under Catstruction. Please excuse the meows</p>
+    <img class="water-cat" src='../Assets/CatUsers/1015.jpg' /> -->
   </div>
   
 
 </template>
 
 <script>
+import UserDetails from '../components/UserDetails.vue'
+
 export default {
-  name: "catdetails"
+  name: "catdetails",
+  components: {
+    UserDetails
+  } 
 };
 </script>
 

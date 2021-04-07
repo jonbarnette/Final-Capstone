@@ -10,5 +10,9 @@ export default {
     return axios.get('/cats')
   },
 
+  getCatDetails() {
+    return axios.get('/catdetails')
+  }
+
 
 }
