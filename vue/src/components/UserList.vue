@@ -21,11 +21,7 @@
           <div class="divTableRow" v-for="cat in filteredCats" v-bind:key="cat.name">
             <div class="divTableCell">
                 <!-- <img class="image" v-bind:src="getImageURL(cat.imageName)" /> -->
-<<<<<<< HEAD
             </div> 
-=======
-            </div>
->>>>>>> 6b3e64a866c2526f5f5f073069c32f756bdf5bed
             
             <div class="divTableCell">{{ cat.name }}</div>
             <div class="divTableCell">{{ cat.age }}</div>
@@ -58,11 +54,7 @@ data() {
      filteredCats() {
          return this.catsArray.filter((cat) => {  
               console.log(this.occupationFilter);
-<<<<<<< HEAD
              return cat.occupation.toLowerCase().includes(this.occupationFilter.toLowerCase());
-=======
-             return cat.occupation.toLowerCase().includes(this.occupationFilter.toLowerCase()) ;
->>>>>>> 6b3e64a866c2526f5f5f073069c32f756bdf5bed
          });
      }
   },
