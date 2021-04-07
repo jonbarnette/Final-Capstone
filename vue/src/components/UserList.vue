@@ -54,7 +54,7 @@ data() {
      filteredCats() {
          return this.catsArray.filter((cat) => {  
               console.log(this.occupationFilter);
-             return this.occupationFilter === '' ? true : this.occupationFilter == cat.occupation;
+             return cat.occupation.toLowerCase().includes(this.occupationFilter.toLowerCase()) ;
          });
      }
   },
