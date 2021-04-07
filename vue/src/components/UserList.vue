@@ -26,7 +26,7 @@
             <div class="divTableCell">{{ cat.name }}</div>
             <div class="divTableCell">{{ cat.age }}</div>
             <div class="divTableCell">{{ cat.occupation }}</div>
-            <div class="divTableCell">{{ cat.description }}</div>
+            <div class="divTableCell">{{ cat.tagline }}</div>
            
           </div>
         </div>
@@ -42,7 +42,7 @@ import catService from '@/services/CatService.js';
 
 export default {
 
-  name: "user-display",
+  name: "user-list",
   props: ["user"],
 data() {
     return {
@@ -58,19 +58,22 @@ data() {
          });
      }
   },
-  created() {
-    catService.getCatlist().then(response => {
-      this.catsArray = response.data;
-    })
-  },
-  methods: {
-    getImageURL(pic) {
-      return require('../assets/' + pic);
-    }
-  }
-  
 
-}
+  methods: {
+    // getImageURL(pic) {
+    //   return require('../Assets/CatUsers/' + pic);
+    // },
+    viewCatList() {
+      this.$router.push('/cats');
+    }
+  },
+  
+  created() {
+    catService.getCatList().then((response) => {
+      this.catsArray = response.data;
+    });
+  }
+};
 
 </script>
 
