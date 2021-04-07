@@ -37,7 +37,7 @@ export default new Vuex.Store({
 },
 
 {
-imageName: require('../Assets/CatUsers/1005.jpeg')
+imageName: require('../Assets/CatUsers/1005.jpg')
 }
 
 ]
