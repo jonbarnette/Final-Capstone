@@ -24,3 +24,9 @@ export default {
 
 </script>
 
+<style>
+* {
+  background-color: #5680E9;
+  color: #C1C8E4;
+}
+</style>

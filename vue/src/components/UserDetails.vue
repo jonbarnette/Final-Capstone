@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="userdetail">
   
     <div class="placeFrequented">
       <h3>List Of Places Frequented</h3>
@@ -50,10 +50,7 @@ export default {
 
 
 <style>
-* {
-  background-color: #16ffbd;
-  color: #c34271;
-}
+
 
 .image {
   display: block;
