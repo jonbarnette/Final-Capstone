@@ -23,7 +23,7 @@
                 <img class="image" v-bind:src="getImageURL(cat.imageName)" />
             </div> 
             
-            <div class="divTableCell" v-on:click="toCatDetails()">{{cat.name}}</div>
+            <div id="clickCursor" class="divTableCell" v-on:click="toCatDetails()">{{cat.name}}</div>
             
             <div class="divTableCell">{{ cat.lives }}</div>
             <div class="divTableCell">{{ cat.occupation }}</div>
@@ -96,6 +96,7 @@ data() {
 
 #main-div {
     margin: 30px;
+   
 }
 #searchUsers {
     margin: 30px;
@@ -174,6 +175,11 @@ div.minimalistBlack {
 .divTableBody {
   display: table-row-group;
 }
+
+#clickCursor {
+   cursor: pointer;
+}
+
 
 
 

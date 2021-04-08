@@ -8,6 +8,7 @@
           type="text"
           class="form-control"
           v-model="cat.name"
+          required
         />
       </div>
       <div class="form-group">
@@ -27,6 +28,7 @@
           type="text"
           class="form-control"
           v-model="cat.lives"
+          required
         />
       </div>
 
@@ -37,6 +39,7 @@
           type="text"
           class="form-control"
           v-model="cat.color"
+          required
         />
       </div>
 
@@ -47,6 +50,7 @@
           type="text"
           class="form-control"
           v-model="cat.occupation"
+          required
         />
       </div>
 
@@ -57,6 +61,7 @@
           type="text"
           class="form-control"
           v-model="cat.tagline"
+          required
         />
       </div>
 
@@ -67,6 +72,7 @@
           type="text"
           class="form-control"
           v-model="cat.address"
+          required
         />
       </div>
 
@@ -77,6 +83,7 @@
           type="text"
           class="form-control"
           v-model="cat.summary"
+          required
         />
       </div>
 
