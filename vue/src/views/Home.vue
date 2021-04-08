@@ -1,12 +1,12 @@
 <template>
   <div class="bgimg">
   <div class="topleft">
-    <p>Tabby Pro Cat Agency</p>
+    <h2>Tabby Pro Cat Agency</h2>
   </div>
   <div class="middle">
     <h1>COMING SOON</h1>
     <hr>
-    <p id="demo" style="font-size:30px"></p>
+    <p id="demo" style="font-size:35px"></p>
   </div>
   <img class="catimage" src="../Assets/CatUsers/3001.jpg" />
   <div class="bottomleft">
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "home",
+  name: "home"
 };
 
 // Set the date we're counting down to
