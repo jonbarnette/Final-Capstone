@@ -37,10 +37,10 @@ public class CatListController
 	}
 	
 //	Need authorization to be able to see details
-	@RequestMapping(path="/cats/{catId}", method =RequestMethod.GET)
-	public List<CatList> getCatDetails(@PathVariable int catId)
+	@RequestMapping(path="/cats/{cat_id}", method =RequestMethod.GET)
+	public List<CatList> getCatDetails(@PathVariable int cat_id)
 	{
-		return catListDao.retrieveCatDetails(catId);
+		return catListDao.retrieveCatDetails(cat_id);
 	}
 	
 	@ResponseStatus(HttpStatus.CREATED)
