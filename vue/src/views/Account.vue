@@ -4,13 +4,19 @@
     <h1>Welcome Back nya!</h1>
     <p>Under Catstruction. Please excuse the meows</p>
     <img class="water-cat" src='../Assets/CatUsers/1015.jpg' />
+    <add-cat></add-cat>
   </div>
   
 
 </template>
 
 <script>
+
+import AddCat from '@/components/AddCat.vue'
 export default {
+  components: {
+    AddCat
+  },
   name: "account"
 };
 </script>

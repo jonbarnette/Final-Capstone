@@ -93,6 +93,7 @@
       <button class="btn btn-cancel" type="cancel">Cancel</button>
     </form>
   </div>
+
 </template>
 
 
@@ -139,3 +140,8 @@ export default {
 }
  
 </script>
+
+<style scoped>
+
+
+</style>
