@@ -11,6 +11,8 @@ public interface CatListDAO {
 	
 	List<CatList> retrieveCatDetails(int catId); //will give details for the cat selected
 	
+	void addCat(CatList catList);
 	
+	boolean deleteCat(int catId);
 
 }
