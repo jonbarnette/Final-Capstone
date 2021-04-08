@@ -1,5 +1,5 @@
 <template>
-  <div id="addCatform">
+  <!-- <div id="addCatform">
     <form v-on:submit.prevent="submitForm" class="catForm">
       <div class="form-group">
         <label for="catName"> Name:</label>
@@ -92,7 +92,28 @@
       <button class="btn btn-submit">Submit</button>
       <button class="btn btn-cancel" type="cancel">Cancel</button>
     </form>
-  </div>
+  </div> -->
+  <div class="container5">
+  <form action="/action_page.php">
+    <label for="fname">Name</label>
+    <input type="text" id="fname" name="name" placeholder="Your name..">
+    <label for="lives">Lives</label>
+    <input type="text" id="lives" name="lives" placeholder="How many lives left..">
+    <label for="breed">Breed</label>
+    <input type="text" id="breed" name="breed" placeholder="Your breed..">
+    <label for="color">Color</label>
+    <input type="text" id="color" name="color" placeholder="Your color(s)..">
+    <label for="occupation">Occupation</label>
+    <input type="text" id="occupation" name="occupation" placeholder="Your occupation..">
+    <label for="address">Address</label>
+    <input type="text" id="address" name="address" placeholder="Your address..">
+    <label for="tagline">Tagline</label>
+    <textarea id="tagline" name="tagline" placeholder="Write something.." style="height:100px"></textarea>
+    <label for="summary">Summary</label>
+    <textarea id="summary" name="summary" placeholder="Write something.." style="height:100px"></textarea>
+    <input type="submit" value="Submit">
+  </form>
+</div>
 </template>
 
 
@@ -139,3 +160,45 @@ export default {
 }
  
 </script>
+
+<style >
+* {box-sizing: border-box;}
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 10em;
+}
+input[type=submit]:hover {
+  background-color: #45A049;
+}
+.container5 {
+  border-radius: 5px;
+  background-color: black;
+  padding: 20px;
+  font-family: monospace;
+  width: 25em;
+  margin:0 auto;
+  vertical-align:baseline;
+  
+  
+}
+
+
+
+
+
+</style>

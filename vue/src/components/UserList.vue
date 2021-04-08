@@ -6,7 +6,7 @@
             
     </div>
     <div class="body">
-      <div class="card" v-for="cat in filteredCats" v-bind:key="cat.name" v-on:click="toCatDetails()">
+      <div class="card" v-for="cat in filteredCats" v-bind:key="cat.name" >
 
         <div>
           <img class="image" v-bind:src="getImageURL(cat.imageName)" />
@@ -15,7 +15,8 @@
         <div class="info">
 
         <div class="container">
-          <h3>{{cat.name}}</h3>
+          <!-- <h3>{{cat.name}}</h3> -->
+           <router-link v-bind:to="{ name: 'catdetails' }">{{cat.name}}</router-link>
           </div>
         <div class="container">
           <h5>{{cat.occupation}}</h5>
