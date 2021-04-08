@@ -1,5 +1,6 @@
 <template>
   <div>
+  
     <div class="placeFrequented">
       <h3>List Of Places Frequented</h3>
 
@@ -36,12 +37,13 @@ export default {
     viewCatDetails() {
       this.$router.push("/catdetails");
     },
-    created() {
+    
+  },
+  created() {
       catService.getCatDetails().then((response) => {
         this.catsArray = response.data;
       });
     },
-  },
 };
 </script>
 

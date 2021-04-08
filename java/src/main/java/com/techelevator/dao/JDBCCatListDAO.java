@@ -56,6 +56,25 @@ public class JDBCCatListDAO implements CatListDAO {
 	}
 	
 	
+	@Override
+	public void addCat(CatList catList) {
+		String sql = "INSERT INTO catlist (name, lives, breed, color, occupation, tagline, address, summary) " + 
+						"VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+		
+		jdbcTemplate.update(sql, catList.getName(), catList.getLives(), catList.getBreed(), catList.getColor(), catList.getOccupation(),
+								catList.getTagline(), catList.getAddress(), catList.getSummary());
+		
+	}
+	
+	
+	@Override
+	public boolean deleteCat(int catId) {
+		String sql = "SELECT cat_id FROM catlist WHERE cat_id = ?";
+		String userSql = "SELECT user_id FROM users WHERE user_id = ?";
+		return false;
+	}
+	
+	
 	
 	private CatList mapRowToCatList(SqlRowSet rs) {
         CatList user = new CatList();
@@ -81,5 +100,9 @@ public class JDBCCatListDAO implements CatListDAO {
         user.setSummary(rs.getString("summary"));
         return user;
     }
+
+	
+
+	
 
 }

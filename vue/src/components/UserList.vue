@@ -109,49 +109,14 @@ data() {
 }
 
 .image {
-  width: 100%!important;
-   height: 200px!important;
-   object-fit: cover!important;
-   align-content: center!important;
-   justify-content: center!important;
-}
-
-.body {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: center;
-
-}
-
-.card {
-  flex: 0 1 30%;
-  align-items: space-around;
-  justify-content: center;
-  align-content: center;
-  margin: 10px;
-  box-shadow: 0px 8px 8px 0px grey;
-}
-
-.card:hover {
-  box-shadow: 0px 8px 8px 0px pink;
-}
-
-.container {
-  align-content: center;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  margin: 0px;
-}
-
-h3, h5 {
-  margin: 0px;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 #main-div {
     margin: 30px;
+   
 }
 #searchUsers {
     margin: 30px;
@@ -165,7 +130,7 @@ input[type=text] {
     border-radius: 6px;
 }
 
-/* div.minimalistBlack {
+div.minimalistBlack {
   margin: auto;
   border: 2px solid #06b712;
   width: 80%;
@@ -206,7 +171,7 @@ input[type=text] {
   font-size: 14px;
 }
 /* DivTable.com */
-/* .divTable {
+.divTable {
   display: table;
   table-layout: fixed;
 }
@@ -229,7 +194,12 @@ input[type=text] {
 }
 .divTableBody {
   display: table-row-group;
-} */
+}
+
+#clickCursor {
+   cursor: pointer;
+}
+
 
 
 

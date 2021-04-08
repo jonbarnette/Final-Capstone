@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
 
 import com.techelevator.dao.CatListDAO;
 import com.techelevator.dao.UserDAO;
@@ -40,6 +42,26 @@ public class CatListController
 	{
 		return catListDao.retrieveCatDetails(catId);
 	}
+	
+	@ResponseStatus(HttpStatus.CREATED)
+	@RequestMapping(path="/cats", method =RequestMethod.POST)
+	public void addCatProfile(@RequestBody CatList catList) //Might need to add in Principal
+	{
+		catListDao.addCat(catList);
+		
+	}
+	
+	
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	@RequestMapping(path="/cats", method =RequestMethod.DELETE)
+	public void deleteCatProfile(@RequestBody CatList catList) //Might need to add in Principal  ADD EXCEPTIONS
+	{
+		catListDao.addCat(catList);
+		
+	}
+	
+	
+	
 	
 ////	Mapped as a PUT Method to update transfers using /transfers/update/{id}
 //	@PutMapping(“/update/{id}“)
