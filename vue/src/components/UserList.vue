@@ -5,34 +5,54 @@
         <input type="text" name="occupation" v-model="occupationFilter" />
             
     </div>
-<div id="main-div">
-      <div class="divTable minimalistBlack" v-show="filteredCats.length > 0">
-        <div class="divTableHeading">
-          <div class="divTableRow">
-            <div class="divTableHead"></div>
-            <div class="divTableHead">Name</div>
-            <div class="divTableHead">Lives</div>
-            <div class="divTableHead">Occupation</div>
-            <div class="divTableHead">Tagline</div>
-          
-          </div>
+    <div class="body">
+      <div class="card" v-for="cat in filteredCats" v-bind:key="cat.name" v-on:click="toCatDetails()">
+
+        <div>
+          <img class="image" v-bind:src="getImageURL(cat.imageName)" />
         </div>
-        <div class="divTableBody">
-          <div class="divTableRow" v-for="cat in filteredCats" v-bind:key="cat.name">
-            <div class="divTableCell">
-                <img class="image" v-bind:src="getImageURL(cat.imageName)" />
-            </div> 
-            
-            <div id="clickCursor" class="divTableCell" v-on:click="toCatDetails()">{{cat.name}}</div>
-            
-            <div class="divTableCell">{{ cat.lives }}</div>
-            <div class="divTableCell">{{ cat.occupation }}</div>
-            <div class="divTableCell">{{ cat.tagline }}</div>
-           
+
+        <div class="info">
+
+        <div class="container">
+          <h3>{{cat.name}}</h3>
           </div>
+        <div class="container">
+          <h5>{{cat.occupation}}</h5>
+          </div>
+        <div class="container">"{{cat.tagline}}"</div>
+
         </div>
+  
       </div>
     </div>
+    <!-- <div id="main-div">
+          <div class="divTable minimalistBlack" v-show="filteredCats.length > 0">
+            <div class="divTableHeading">
+              <div class="divTableRow">
+                <div class="divTableHead"></div>
+                <div class="divTableHead">Name</div>
+                <div class="divTableHead">Lives</div>
+                <div class="divTableHead">Occupation</div>
+                <div class="divTableHead">Tagline</div>
+              
+              </div>
+            </div>
+            <div class="divTableBody">
+              <div class="divTableRow" v-for="cat in filteredCats" v-bind:key="cat.name">
+                <div class="divTableCell">
+                    <img class="image" v-bind:src="getImageURL(cat.imageName)" />
+                </div> 
+                
+                <div class="divTableCell" v-on:click="toCatDetails()">{{cat.name}}</div>
+                
+                <div class="divTableCell">{{ cat.lives }}</div>
+                <div class="divTableCell">{{ cat.occupation }}</div>
+                <div class="divTableCell">{{ cat.tagline }}</div>
+              
+              </div>
+            </div>
+          </div> -->
   </div>
 
 </template>
