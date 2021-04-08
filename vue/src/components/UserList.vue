@@ -11,7 +11,7 @@
           <div class="divTableRow">
             <div class="divTableHead"></div>
             <div class="divTableHead">Name</div>
-            <div class="divTableHead">Age</div>
+            <div class="divTableHead">Lives</div>
             <div class="divTableHead">Occupation</div>
             <div class="divTableHead">Tagline</div>
           
@@ -20,12 +20,12 @@
         <div class="divTableBody">
           <div class="divTableRow" v-for="cat in filteredCats" v-bind:key="cat.name">
             <div class="divTableCell">
-                <!-- <img class="image" v-bind:src="getImageURL(cat.imageName)" /> -->
+                <img class="image" v-bind:src="getImageURL(cat.imageName)" />
             </div> 
             
             <div class="divTableCell" v-on:click="toCatDetails()">{{cat.name}}</div>
             
-            <div class="divTableCell">{{ cat.age }}</div>
+            <div class="divTableCell">{{ cat.lives }}</div>
             <div class="divTableCell">{{ cat.occupation }}</div>
             <div class="divTableCell">{{ cat.tagline }}</div>
            
@@ -61,9 +61,9 @@ data() {
   },
 
   methods: {
-    // getImageURL(pic) {
-    //   return require('../Assets/CatUsers/' + pic);
-    // },
+    getImageURL(pic) {
+      return require('../Assets/CatUsers/' + pic);
+    },
     viewCatList() {
       this.$router.push('/cats');
     },

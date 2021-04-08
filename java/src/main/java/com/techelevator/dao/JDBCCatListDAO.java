@@ -24,7 +24,7 @@ public class JDBCCatListDAO implements CatListDAO {
 	public List<CatList> retrieveCatList() {
 		
 		List<CatList> users = new ArrayList<>();
-        String sql = "SELECT name, age, occupation, tagline " +
+        String sql = "SELECT name, imageName, name, lives, occupation, tagline " +
         				"FROM catlist";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
@@ -42,7 +42,7 @@ public class JDBCCatListDAO implements CatListDAO {
 	public List<CatList> retrieveCatDetails(int catId) {
 		
 		List<CatList> users = new ArrayList<>();
-        String sql = "SELECT name, age, breed, color, occupation, address, summary " +
+        String sql = "SELECT name, imageName, lives, breed, color, occupation, address, summary " +
         				"FROM catlist " +
         				"WHERE cat_id = ?";
 
@@ -60,7 +60,8 @@ public class JDBCCatListDAO implements CatListDAO {
 	private CatList mapRowToCatList(SqlRowSet rs) {
         CatList user = new CatList();
         user.setName(rs.getString("name"));
-        user.setAge(rs.getInt("age"));
+        user.setImageName(rs.getString("imageName"));
+        user.setLives(rs.getInt("lives"));
         user.setOccupation(rs.getString("occupation"));
         user.setTagline(rs.getString("tagline"));
         
@@ -68,9 +69,10 @@ public class JDBCCatListDAO implements CatListDAO {
     }
 	
 	private CatList mapRowToCatDetails(SqlRowSet rs) {
-        CatList user = new CatList(); 
+        CatList user = new CatList();
         user.setName(rs.getString("name"));
-        user.setAge(rs.getInt("age"));
+        user.setImageName(rs.getString("imageName"));
+        user.setLives(rs.getInt("lives"));
         user.setBreed(rs.getString("breed"));
         user.setColor(rs.getString("color"));
         user.setOccupation(rs.getString("occupation"));

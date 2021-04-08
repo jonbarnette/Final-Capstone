@@ -2,8 +2,9 @@ package com.techelevator.model;
 
 public class CatList {
 	
+	private String imageName;
 	private String name;
-	private int age;  //based on cat years starting at 15
+	private int lives;  //based on cat years starting at 15
 	private String breed; //can be guessed if not sure TABBY WILL BE DEFAULT
 	private String color; //what if you are color blind?
 	private String occupation;
@@ -13,8 +14,12 @@ public class CatList {
 	private int catId; //will be the foreign key for the database
 	
 	
-	
-	
+	public String getImageName() {
+		return imageName;
+	}
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
+	}	
 	public int getCatId() {
 		return catId;
 	}
@@ -27,11 +32,11 @@ public class CatList {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getAge() {
-		return age;
+	public int getLives() {
+		return lives;
 	}
-	public void setAge(int age) {
-		this.age = age;
+	public void setLives(int lives) {
+		this.lives = lives;
 	}
 	public String getBreed() {
 		return breed;
