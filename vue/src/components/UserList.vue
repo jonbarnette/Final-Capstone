@@ -61,7 +61,7 @@ data() {
       this.$router.push('/cats');
     },
   
-    toCatDetails(cat_id) {
+    toCatDetails() {
       this.$router.push('/cats/${cat_id}');
     },
   },

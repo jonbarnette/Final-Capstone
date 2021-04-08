@@ -10,7 +10,7 @@ export default {
         return axios.get('/cats')
     },
 
-    getCatDetails(cat_id) {
+    getCatDetails() {
         return axios.get('/cats/${cat_id}')
     },
 
