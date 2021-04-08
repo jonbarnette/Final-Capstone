@@ -15,7 +15,7 @@ export default {
   },
 
   addCat(cat) {
-    return axios.post()
+    return axios.post('/cats', cat)
   }
 
 
