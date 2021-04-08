@@ -12,12 +12,22 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import AddCat from "../components/AddCat.vue"
 export default {
   name: "account",
   components: {
     AddCat
   }
+=======
+
+import AddCat from '@/components/AddCat.vue'
+export default {
+  components: {
+    AddCat
+  },
+  name: "account"
+>>>>>>> 4bb4499cf883516358789bf7ede9cc72932185e2
 };
 </script>
 

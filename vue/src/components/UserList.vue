@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="userlist">
     <div id="searchUsers">
         <label for="occupation">Enter occupation:</label>
         <input type="text" name="occupation" v-model="occupationFilter" />
@@ -77,10 +77,7 @@ data() {
 </script>
 
 <style>
-* {
-  background-color: #16ffbd;
-  color:  #C34271;
-}
+
 
 .image {
   width: 100%!important;
