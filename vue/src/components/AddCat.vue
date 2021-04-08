@@ -22,12 +22,13 @@
       </div>
 
       <div class="form-group">
-        <label for="lives">Lives Left:</label>
+        <label for="lives" >Lives Left:</label>
         <input
           id="lives"
           type="text"
           class="form-control"
           v-model="cat.lives"
+          
           required
         />
       </div>
@@ -139,3 +140,49 @@ export default {
 }
  
 </script>
+
+<style scoped>
+
+.btn {
+    padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin: 5px;
+
+}
+
+.btn btn-submit:hover {
+
+background-color: #3e8e41;
+}
+
+.btn:hover {
+    background-color: #3e8e41;
+
+}
+
+.btn:active {
+     background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+
+}
+
+.btn btn-cancel:active { background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+
+}
+
+input[type="text"]:focus {
+    background-color: lightblue;
+}
+
+</style>
