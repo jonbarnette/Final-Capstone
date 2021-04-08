@@ -1,5 +1,5 @@
 <template>
-  <div class="container1">
+  <div class="container">
       <div id="copycat">&#169; {{ copyText }}</div>
         <div id="contact">Contact</div>
         <div id="aboutUs">About Us</div>
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style>
-.container1 {
+.container {
     display: flex;
     float: center;
     text-align: center;

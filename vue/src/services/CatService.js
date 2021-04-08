@@ -6,17 +6,17 @@ import axios from 'axios';
 
 export default {
 
-    getCatList() {
-        return axios.get('/cats')
-    },
+  getCatList() {
+    return axios.get('/cats')
+  },
 
-    getCatDetails(cat_id) {
-        return axios.get('/cats/${cat_id}')
-    },
+  getCatDetails(catId) {
+    return axios.get('/cats/${catId}', catId)
+  },
 
-    addCat(cat) {
-        return axios.post('/cats', cat)
-    }
+  addCat(cat) {
+    return axios.post('/cats', cat)
+  }
 
 
 }
