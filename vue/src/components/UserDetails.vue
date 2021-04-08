@@ -1,38 +1,21 @@
 <template>
   <div>
-
-    <div class="livesRemaining">
-      <h3>Remaining Lives</h3>
-      <p>{{details.lives}}</p>
-    </div>
-
-    <div>
-      <img class="image" v-bind:src="getImageURL(details.imageName)" />
-    </div>
-
-    <div id="userBio">
-      <strong>Name: </strong>
-      <p>{{details.name}}</p>
-      <strong>Occupation: </strong>
-      <p>{{details.address}}</p>
-      <strong>Breed: </strong>
-      <p>{{details.breed}}</p>
-      <strong>Color: </strong>
-      <p>{{details.color}}</p>
-    </div>
-
+  
     <div class="placeFrequented">
       <h3>List Of Places Frequented</h3>
-      <p>{{details.address}}</p>
-    </div>
 
+      <p>Places placeholder</p>
+    </div>
     <div class="summaryDetail">
       <h3>Cat Summary</h3>
-      <p>{{details.summary}}</p>
     </div>
+    <div id="userBio">
+      <div>Name:{{ cat.name }}</div>
 
-    <div>
-      <router-link :to="{ name: 'user-list' }">Return to List</router-link>
+      <div>Lives</div>
+      <div>Occupation</div>
+      <div>Breed</div>
+      <div>Color</div>
     </div>
     
   </div>
@@ -46,23 +29,19 @@ export default {
 
   data() {
     return {
-      details: {
-        cat_id: null,
-        name: "",
-        imageName: "",
-        lives: "",
-        breed: "",
-        color: "",
-        occupation: "",
-        tagline: "",
-        address: "",
-        summary: "",
-      }
+      catsArray: [],
     };
   },
+
+  methods: {
+    viewCatDetails() {
+      this.$router.push("/catdetails");
+    },
+    
+  },
   created() {
-      catService.getCatDetails(this.$route.params.cat_id).then((response) => {
-        this.details = response.data;
+      catService.getCatDetails().then((response) => {
+        this.catsArray = response.data;
       });
     },
 };

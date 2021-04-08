@@ -64,21 +64,21 @@ const router = new Router({
             }
         },
         {
-            path: "/account",
-            name: "account",
-            component: Account,
-            meta: {
-                requiresAuth: false
-            }
-        },
-        {
-            path: "/cats/:cat_id",
-            name: "CatDetails",
-            component: CatDetails,
-            meta: {
-                requiresAuth: false
-            }
+          path: "/account",
+          name: "account",
+          component: Account,
+          meta: {
+              requiresAuth: false
+          }
+      },
+      {
+        path: "/catdetails",
+        name: "catdetails",
+        component: CatDetails,
+        meta: {
+            requiresAuth: false
         }
+    }
 
     ]
 })
