@@ -172,6 +172,11 @@ input[type=text], select, textarea {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
+  
+}
+
+::placeholder {
+  color: black;
 }
 input[type=submit] {
   background-color: #4CAF50;
@@ -187,7 +192,7 @@ input[type=submit]:hover {
 }
 .container5 {
   border-radius: 5px;
-  background-color: black;
+  background-color: #5680E9;
   padding: 20px;
   font-family: monospace;
   width: 25em;
