@@ -1,17 +1,27 @@
 <template>
 
   <div class="account">
-    <h1>Welcome Back nya!</h1>
+
+    <user-profile></user-profile>
+
+    
+    <!-- <h1>Welcome Back nya!</h1>
     <p>Under Catstruction. Please excuse the meows</p>
-    <img class="water-cat" src='../Assets/CatUsers/1015.jpg' />
+    <img class="water-cat" src='../Assets/CatUsers/1015.jpg' /> -->
   </div>
   
 
 </template>
 
 <script>
+
+import UserProfile from "../components/UserProfile.vue"
 export default {
-  name: "account"
+  name: "account",
+  
+  components: {
+    UserProfile
+  }
 };
 </script>
 

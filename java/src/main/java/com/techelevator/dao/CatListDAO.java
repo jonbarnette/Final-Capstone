@@ -9,10 +9,10 @@ public interface CatListDAO {
 	
 	List<CatList> retrieveCatList();
 	
-	List<CatList> retrieveCatDetails(int catId); //will give details for the cat selected
+	List<CatList> retrieveCatDetails(int cat_id); //will give details for the cat selected
 	
 	void addCat(CatList catList);
 	
-	boolean deleteCat(int catId);
+	boolean deleteCat(int cat_id);
 
 }

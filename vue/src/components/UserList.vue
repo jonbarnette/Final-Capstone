@@ -6,7 +6,7 @@
             
     </div>
     <div class="body">
-      <div class="card" v-for="cat in filteredCats" v-bind:key="cat.name" v-on:click="toCatDetails()">
+      <div class="card" v-for="cat in filteredCats" v-bind:key="cat.cat_id" v-on:click="toCatDetails(cat_id)">
 
         <div>
           <img class="image" v-bind:src="getImageURL(cat.imageName)" />
@@ -61,8 +61,8 @@ data() {
       this.$router.push('/cats');
     },
   
-    toCatDetails() {
-      this.$router.push('/catdetails');
+    toCatDetails(cat_id) {
+      this.$router.push('/cats/${cat_id}');
     },
   },
 

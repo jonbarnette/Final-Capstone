@@ -39,14 +39,14 @@ public class JDBCCatListDAO implements CatListDAO {
 	}
 
 	
-	public List<CatList> retrieveCatDetails(int catId) {
+	public List<CatList> retrieveCatDetails(int cat_id) {
 		
 		List<CatList> users = new ArrayList<>();
-        String sql = "SELECT name, imageName, lives, breed, color, occupation, address, summary " +
+        String sql = "SELECT cat_id, name, imageName, lives, breed, color, occupation, address, summary " +
         				"FROM catlist " +
         				"WHERE cat_id = ?";
 
-        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, catId);
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, cat_id);
         while(results.next()) {
             CatList user = mapRowToCatDetails(results);
             users.add(user);
@@ -58,10 +58,10 @@ public class JDBCCatListDAO implements CatListDAO {
 	
 	@Override
 	public void addCat(CatList catList) {
-		String sql = "INSERT INTO catlist (name, lives, breed, color, occupation, tagline, address, summary) " + 
-						"VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO catlist (name, imageName, lives, breed, color, occupation, tagline, address, summary) " + 
+						"VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
-		jdbcTemplate.update(sql, catList.getName(), catList.getLives(), catList.getBreed(), catList.getColor(), catList.getOccupation(),
+		jdbcTemplate.update(sql, catList.getName(), catList.getImageName(), catList.getLives(), catList.getBreed(), catList.getColor(), catList.getOccupation(),
 								catList.getTagline(), catList.getAddress(), catList.getSummary());
 		
 	}
@@ -78,7 +78,7 @@ public class JDBCCatListDAO implements CatListDAO {
 	
 	private CatList mapRowToCatList(SqlRowSet rs) {
         CatList user = new CatList();
-        user.setCatId(rs.getInt("cat_id"));
+        user.setCat_Id(rs.getInt("cat_id"));
         user.setName(rs.getString("name"));
         user.setImageName(rs.getString("imageName"));
         user.setLives(rs.getInt("lives"));
@@ -90,6 +90,7 @@ public class JDBCCatListDAO implements CatListDAO {
 	
 	private CatList mapRowToCatDetails(SqlRowSet rs) {
         CatList user = new CatList();
+        user.setCat_Id(rs.getInt("cat_id"));
         user.setName(rs.getString("name"));
         user.setImageName(rs.getString("imageName"));
         user.setLives(rs.getInt("lives"));
