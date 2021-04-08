@@ -24,7 +24,7 @@ public class JDBCCatListDAO implements CatListDAO {
 	public List<CatList> retrieveCatList() {
 		
 		List<CatList> users = new ArrayList<>();
-        String sql = "SELECT name, imageName, name, lives, occupation, tagline " +
+        String sql = "SELECT cat_id, name, imageName, name, lives, occupation, tagline " +
         				"FROM catlist";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
@@ -59,6 +59,7 @@ public class JDBCCatListDAO implements CatListDAO {
 	
 	private CatList mapRowToCatList(SqlRowSet rs) {
         CatList user = new CatList();
+        user.setCatId(rs.getInt("cat_id"));
         user.setName(rs.getString("name"));
         user.setImageName(rs.getString("imageName"));
         user.setLives(rs.getInt("lives"));
