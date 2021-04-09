@@ -16,7 +16,7 @@
 
         <div class="container">
           <!-- <h3>{{cat.name}}</h3> -->
-           <router-link v-bind:to="{ name: 'catdetails' }">{{cat.name}}</router-link>
+           <router-link v-bind:to="{ name: 'catdetails', params: {id: cat.catId }}">{{cat.name}}</router-link>
           </div>
         <div class="container">
           <h5>{{cat.occupation}}</h5>

@@ -11,6 +11,7 @@ export default {
     },
 
     getCatDetails(catId) {
+        console.log(catId)
         return axios.get('/cats/' + catId)
     },
 

@@ -20,6 +20,7 @@ export default new Vuex.Store({
   state: {
     token: currentToken || '',
     user: currentUser || {},
+    catId: '',
     catlist: [ {
       imageName: require('../Assets/CatUsers/1001.jpg')
     },
@@ -59,6 +60,10 @@ imageName: require('../Assets/CatUsers/1005.jpg')
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
-    }
+    },
+    SET_CATID(state, id) {
+      state.catId = id;
+     
+    },
   }
 })

@@ -9,8 +9,8 @@
   <div class="summaryDetail">
       <h3>Cat Summary</h3>
     </div>
-    <div id="userBio">
-      <!-- <div>Name:{{ cat.name }}</div> -->
+    <div id="userBio" v-for="cat in catsArray" v-bind:key="cat.catId">
+       <div>Name:{{ cat.name }}</div> 
 
       <div>Lives</div>
       <div>Occupation</div>
@@ -40,8 +40,15 @@ export default {
     
   },
   created() {
-      catService.getCatDetails().then((response) => {
+      const catId = this.$store.state.catId;
+      
+      catService.getCatDetails(catId).then((response) => {
+        console.log(response)
+        console.log(response.data)
+        
         this.catsArray = response.data;
+      }).catch(error =>{
+        console.log(error.statusMsg)
       });
     },
 };

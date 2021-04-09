@@ -37,14 +37,20 @@
         Create Account
       </button>
     </form>
+    <add-cat></add-cat>
   </div>
 </template>
 
 <script>
 import authService from '../services/AuthService';
+// import catService from '../services/CatService';
+import AddCat from '../components/AddCat.vue';
 
 export default {
   name: 'register',
+  components: {
+    AddCat
+  },
   data() {
     return {
       user: {
@@ -82,6 +88,7 @@ export default {
           });
       }
     },
+    
     clearErrors() {
       this.registrationErrors = false;
       this.registrationErrorMsg = 'There were problems registering this user.';

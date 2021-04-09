@@ -19,7 +19,11 @@ export default {
   name: "catdetails",
   components: {
     UserDetails
-  } 
+  }, 
+  created() {
+    const catId = this.$route.params.id;
+    this.$store.commit("SET_CATID", catId);
+  }
 };
 </script>
 
