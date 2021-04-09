@@ -84,7 +84,7 @@ const router = new Router({
         name: 'delete',
         component: Home,
         meta: {
-            requiresAuth: false
+            requiresAuth: true
         }
     },
 

@@ -5,7 +5,7 @@
       <div>
         <img class="image" v-bind:src="getImageURL(cat.imageName)" />
       </div>
-      <div>Name: {{ cat.name }}</div>
+      <div> <h2> {{ cat.name }} </h2> </div>
       <div>Lives: {{ cat.lives }}</div>
       <div>Breed: {{ cat.breed }}</div>
       <div>Color: {{ cat.color }}</div>

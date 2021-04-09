@@ -1,7 +1,7 @@
 <template>
   
   <div class="catdetails">
-    <h1>Put Details Here Meow!</h1>
+   
   
     <user-details></user-details>
    
