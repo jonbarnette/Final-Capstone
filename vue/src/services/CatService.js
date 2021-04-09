@@ -11,7 +11,7 @@ export default {
     },
 
     getCatDetails(catId) {
-        return axios.get('/cats/${catId}', catId)
+        return axios.get('/cats/' + catId)
     },
 
     addCat(cat) {

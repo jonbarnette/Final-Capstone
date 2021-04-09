@@ -49,16 +49,8 @@ export default {
 
 
 
-<<<<<<< HEAD
-<style scoped>
-*, .placeFrequented {
-  background-color: #16ffbd;
-  color: #060e33!important;
-}
-=======
 <style>
 
->>>>>>> 4bb4499cf883516358789bf7ede9cc72932185e2
 
 .image {
   display: block;
