@@ -64,8 +64,10 @@ imageName: require('../Assets/CatUsers/1005.jpg')
     SET_CATID(state, id) {
       state.catId = id;
     },
-    DELETE_CAT(state, id) {
-      state.catId = id;
+    DELETE_CAT(state, catIdToDelete) {
+      state.catId = state.catId.filter((cat) => {
+        return cat.id !== catIdToDelete;
+      });
     }
   }
 })

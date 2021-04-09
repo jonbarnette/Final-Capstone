@@ -28,10 +28,13 @@ export default {
     deleteProfile() {
       if (confirm("Are you sure you want to delete? This action cannot be undone."))
       {catService
-        .deleteCat(this.cat)
+        .deleteCat(this.catId)
         .then((response) => {
           console.log(response.status);
           if (response.status == "201") {
+
+              alert("Account successfully deleted");
+              this.$store.commit("DELETE_CAT", this.catId);
             //success
             this.$router.push("/");
           }
@@ -43,10 +46,10 @@ export default {
       }
     }
   },
-created() {
-    const catId = this.$route.params.id;
-    this.$store.commit("DELETE_CAT", catId);
-  },
+// created() {
+//     const catId = this.$route.params.id;
+//     this.$store.commit("DELETE_CAT", catId);
+//   },
 }
 </script>
 
