@@ -33,7 +33,7 @@ export default {
           console.log(response.status);
           if (response.status == "201") {
             //success
-            this.$router.push("/account");
+            this.$router.push("/");
           }
         })
         .catch((error) => {
