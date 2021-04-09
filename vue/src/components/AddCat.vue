@@ -105,6 +105,7 @@
         name="lives"
         placeholder="How many lives left.."
         required
+        
       />
       <label for="breed">Breed</label>
       <input type="text" id="breed" name="breed" placeholder="Your breed.." />
@@ -148,7 +149,7 @@
         style="height: 100px"
         required
       ></textarea>
-     
+     <input type="submit" class="catProfileButton" value="Create Profile">
     </form>
     
   </div>
@@ -183,7 +184,7 @@ export default {
           console.log(response.status);
           if (response.status == "201") {
             //success
-            this.$router.push("account");
+            this.$router.push("/account");
           }
         })
         .catch((error) => {

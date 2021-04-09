@@ -1,6 +1,6 @@
 <template>
   <div id="register" class="text-center">
-    <form class="form-register" @submit.prevent="register(); submitForm();">
+    <form class="form-register" @submit.prevent="register">
       <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
@@ -37,19 +37,19 @@
         Create Account
       </button>
     </form>
-    <add-cat></add-cat>
+    
   </div>
 </template>
 
 <script>
 import authService from '../services/AuthService';
-import catService from '../services/CatService';
-import AddCat from '../components/AddCat.vue';
+
+
 
 export default {
   name: 'register',
   components: {
-    AddCat
+    
   },
   data() {
     return {
@@ -88,21 +88,7 @@ export default {
           });
       }
     },
-     submitForm() {
-      catService
-        .addCat(this.cat)
-        .then((response) => {
-          console.log(response.status);
-          if (response.status == "201") {
-            //success
-            
-          }
-        })
-        .catch((error) => {
-          // handle an error
-          console.log(error);
-        });
-    },
+     
     
     clearErrors() {
       this.registrationErrors = false;
