@@ -1,11 +1,12 @@
 <template>
   <div id="userdetail">
-    
     <div id="userBio" v-for="cat in catsArray" v-bind:key="cat.catId">
       <div>
-        <img class="image" v-bind:src="getImageURL(cat.imageName)" />
+        <img class="detailImage" v-bind:src="getImageURL(cat.imageName)" />
       </div>
-      <div> <h2> {{ cat.name }} </h2> </div>
+      <div>
+        <h2>{{ cat.name }}</h2>
+      </div>
       <div>Lives: {{ cat.lives }}</div>
       <div>Breed: {{ cat.breed }}</div>
       <div>Color: {{ cat.color }}</div>
@@ -45,7 +46,7 @@ export default {
       this.$router.push("/catdetails");
     },
     getImageURL(pic) {
-      return require('../Assets/CatUsers/' + pic);
+      return require("../Assets/CatUsers/" + pic);
     },
   },
   created() {
@@ -68,10 +69,15 @@ export default {
 
 
 
-<style>
-.image {
+<style scoped>
+.detailImage {
   display: block;
-  width: 100%;
+  width: 300px !important;
   height: auto;
+  margin: auto;
+}
+* {
+  display:flex;
+  flex-direction: column;
 }
 </style>
