@@ -29,7 +29,7 @@ CREATE TABLE users (
 CREATE TABLE catlist (
 	cat_id int DEFAULT nextval('seq_cat_id'::regclass) NOT NULL,
 	name varchar(50) NOT NULL,
-	imageName varchar(15) NOT NULL,
+	imageName varchar(15),
 	lives int NOT NULL,
 	breed varchar(50) NOT NULL,
 	color varchar(50) NOT NULL,

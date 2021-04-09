@@ -58,10 +58,10 @@ public class JDBCCatListDAO implements CatListDAO {
 	
 	@Override
 	public void addCat(CatList catList) {
-		String sql = "INSERT INTO catlist (name, imagename, lives, breed, color, occupation, tagline, address, summary) " + 
-						"VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO catlist (name,lives, breed, color, occupation, tagline, address, summary) " + 
+						"VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 		
-		jdbcTemplate.update(sql, catList.getName(), catList.getImageName(), catList.getLives(), catList.getBreed(), catList.getColor(), catList.getOccupation(),
+		jdbcTemplate.update(sql, catList.getName(), catList.getLives(), catList.getBreed(), catList.getColor(), catList.getOccupation(),
 								catList.getTagline(), catList.getAddress(), catList.getSummary());
 		
 	}

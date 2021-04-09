@@ -104,6 +104,7 @@
         id="lives"
         name="lives"
         placeholder="How many lives left.."
+        required
       />
       <label for="breed">Breed</label>
       <input type="text" id="breed" name="breed" placeholder="Your breed.." />
@@ -113,6 +114,7 @@
         id="color"
         name="color"
         placeholder="Your color(s).."
+        required
       />
       <label for="occupation">Occupation</label>
       <input
@@ -120,6 +122,7 @@
         id="occupation"
         name="occupation"
         placeholder="Your occupation.."
+        required
       />
       <label for="address">Address</label>
       <input
@@ -127,6 +130,7 @@
         id="address"
         name="address"
         placeholder="Your address.."
+        required
       />
       <label for="tagline">Tagline</label>
       <textarea
@@ -134,6 +138,7 @@
         name="tagline"
         placeholder="Write something.."
         style="height: 100px"
+        required
       ></textarea>
       <label for="summary">Summary</label>
       <textarea
@@ -141,8 +146,9 @@
         name="summary"
         placeholder="Write something.."
         style="height: 100px"
+        required
       ></textarea>
-      <input type="submit" value="Submit" />
+     
     </form>
     
   </div>
