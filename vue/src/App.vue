@@ -26,7 +26,7 @@ export default {
 
 <style>
 * {
-  background-color: #5680E9;
-  color: #C1C8E4;
+  background-color: #163da1;
+  color: #c5cada;
 }
 </style>

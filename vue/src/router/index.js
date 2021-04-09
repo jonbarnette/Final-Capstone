@@ -68,7 +68,7 @@ const router = new Router({
           name: "account",
           component: Account,
           meta: {
-              requiresAuth: false
+              requiresAuth: true
           }
       },
       {
@@ -78,7 +78,15 @@ const router = new Router({
         meta: {
             requiresAuth: false
         }
-    }
+    },
+    {
+        path: '/',
+        name: 'delete',
+        component: Home,
+        meta: {
+            requiresAuth: false
+        }
+    },
 
     ]
 })

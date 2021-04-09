@@ -6,6 +6,7 @@
     <p>Under Catstruction. Please excuse the meows</p>
     <img class="water-cat" src='../Assets/CatUsers/1015.jpg' />
     <add-cat></add-cat>
+    <router-link id="delete" v-bind:to="{ name: 'delete' }">Delete Account</router-link>
   </div>
   
 
@@ -21,7 +22,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .water-cat {
   height: 50%;
   width: 50%;
@@ -32,6 +33,11 @@ export default {
 
 .home {
   text-align: center;
+}
+
+#delete {
+  font-size: .5em;
+
 }
 
 /* * {
