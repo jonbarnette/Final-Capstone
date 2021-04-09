@@ -40,10 +40,13 @@ export default {
           // handle an error
           console.log(error);
         });
-      
+      }
     }
-  }
-}
+  },
+created() {
+    const catId = this.$route.params.id;
+    this.$store.commit("DELETE_CAT", catId);
+  },
 }
 </script>
 
