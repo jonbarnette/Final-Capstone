@@ -95,48 +95,52 @@
   </div> -->
   <div class="container5">
     
-    <form action="/action_page.php">
+    <form class="profile" @submit.prevent="submitForm">
       <label for="fname">Name</label>
-      <input type="text" id="fname" name="name" placeholder="Your name.." />
+      <input type="text" id="fname" name="name" v-model="cat.name" placeholder="Your name.." />
+
       <label for="lives">Lives</label>
-      <input
-        type="text"
-        id="lives"
-        name="lives"
-        placeholder="How many lives left.."
-        required
-        
-      />
+      <input type="text" id="lives" name="lives" v-model="cat.lives" placeholder="How many lives left.."
+        required/>
+
       <label for="breed">Breed</label>
-      <input type="text" id="breed" name="breed" placeholder="Your breed.." />
+      <input type="text" id="breed" name="breed"  v-model="cat.breed" placeholder="Your breed.." />
+
       <label for="color">Color</label>
       <input
         type="text"
         id="color"
         name="color"
+        v-model="cat.color"
         placeholder="Your color(s).."
         required
       />
+
       <label for="occupation">Occupation</label>
       <input
         type="text"
         id="occupation"
         name="occupation"
+        v-model="cat.occupation"
         placeholder="Your occupation.."
         required
       />
+
       <label for="address">Address</label>
       <input
         type="text"
         id="address"
         name="address"
+        v-model="cat.address"
         placeholder="Your address.."
         required
       />
+
       <label for="tagline">Tagline</label>
       <textarea
         id="tagline"
         name="tagline"
+        v-model="cat.tagline"
         placeholder="Write something.."
         style="height: 100px"
         required
@@ -145,11 +149,12 @@
       <textarea
         id="summary"
         name="summary"
+        v-model="cat.summary"
         placeholder="Write something.."
         style="height: 100px"
         required
       ></textarea>
-     <input type="submit" class="catProfileButton" value="Create Profile">
+     <button type="submit" class="catProfileButton" value="Create Profile">Free Mice</button>
     </form>
     
   </div>
@@ -165,14 +170,15 @@ export default {
   data() {
     return {
       cat: {
-        name: "",
-        breed: "",
-        lives: "",
-        color: "",
-        occupation: "",
-        tagline: "",
-        address: "",
-        summary: "",
+        name: '',
+        imageName: '1015.jpg',
+        breed: '',
+        lives: '',
+        color: '',
+        occupation: '',
+        tagline: '',
+        address: '',
+        summary: '',
       },
     };
   },

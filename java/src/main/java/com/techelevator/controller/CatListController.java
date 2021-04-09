@@ -53,10 +53,10 @@ public class CatListController
 	
 	
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	@RequestMapping(path="/cats", method =RequestMethod.DELETE)
-	public void deleteCatProfile(@RequestBody CatList catList) //Might need to add in Principal  ADD EXCEPTIONS
+	@RequestMapping(path="/cats/{catId}", method =RequestMethod.DELETE)
+	public void deleteCatProfile(@PathVariable int catId) //Might need to add in Principal  ADD EXCEPTIONS
 	{
-		catListDao.addCat(catList);
+		catListDao.deleteCat(catId);
 		
 	}
 	

@@ -74,7 +74,9 @@ export default {
   display: block;
   width: 300px !important;
   height: auto;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
 }
 * {
   display:flex;

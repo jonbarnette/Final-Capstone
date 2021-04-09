@@ -17,7 +17,11 @@ export default {
 
     addCat(cat) {
         return axios.post('/cats', cat)
-    }
+    },
+
+    deleteCat(catId) {
+        return axios.delete('/cats/' + catId)
+    },
 
 
 }

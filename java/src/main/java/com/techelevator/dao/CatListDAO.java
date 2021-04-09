@@ -13,6 +13,6 @@ public interface CatListDAO {
 	
 	void addCat(CatList catList);
 	
-	boolean deleteCat(int catId);
+	void deleteCat(int catId);
 
 }
