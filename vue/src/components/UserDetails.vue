@@ -1,5 +1,5 @@
 <template>
-  <div id="userdetail">
+  <div id="userdetail" @submit.once="deleteCat">
     <div id="userBio" v-for="cat in catsArray" v-bind:key="cat.catId">
       <div>
         <img class="detailImage" v-bind:src="getImageURL(cat.imageName)" />
@@ -25,6 +25,9 @@
     <div class="summaryDetail" v-for="cat in catsArray" v-bind:key="cat.catId">
       <h3>Cat Summary</h3>
       <p>{{ cat.summary }}</p>
+    </div>
+    <div class="deleteCats" v-for="cat in catsArray" v-bind:key="cat.catId">
+    <button type="submit" class="deleteButton" value="Delete Profile">Delete This Profile</button>
     </div>
   </div>
 </template>
@@ -63,6 +66,23 @@ export default {
       .catch((error) => {
         console.log(error.statusMsg);
       });
+  },
+  deleteCat() {
+      const catId = this.$store.state.catId;
+
+      catService
+        .deleteCat(catId)
+        .then((response) => {
+          console.log(response.status);
+          if (response.status == "204") {
+            //success
+            this.$router.push("/");
+          }
+        })
+        .catch((error) => {
+          // handle an error
+          console.log(error);
+        });
   },
 };
 </script>

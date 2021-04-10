@@ -156,7 +156,6 @@
       ></textarea>
      <button type="submit" class="catProfileButton" value="Create Profile">Free Mice</button>
     </form>
-    
   </div>
 </template>
 
@@ -197,7 +196,7 @@ export default {
           // handle an error
           console.log(error);
         });
-    },
+  },
   },
 };
 </script>

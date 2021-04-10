@@ -20,6 +20,7 @@ export default {
     },
 
     deleteCat(catId) {
+        console.log(catId)
         return axios.delete('/cats/' + catId)
     },
 

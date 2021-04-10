@@ -69,7 +69,8 @@ public class JDBCCatListDAO implements CatListDAO {
 	
 	@Override
 	public void deleteCat(int catId) {
-		jdbcTemplate.update("DELETE FROM catlist WHERE cat_id = ?", catId);
+		String sql = "DELETE FROM catlist WHERE cat_id = ?";
+		jdbcTemplate.update(sql, catId);
 		
 	}
 	

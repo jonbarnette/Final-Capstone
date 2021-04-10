@@ -1,5 +1,8 @@
 package com.techelevator.controller;
 import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.annotation.Transactional;
@@ -56,8 +59,8 @@ public class CatListController
 	
 	
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	@RequestMapping(value="/cats/{catId}", method=RequestMethod.DELETE)
-	public void deleteCatProfile(@PathVariable int catId) //Might need to add in Principal  ADD EXCEPTIONS
+	@RequestMapping(value="/cats/{catId}", method = RequestMethod.DELETE)
+	public void deleteCatProfile(@Valid @PathVariable("catId") int catId) //Might need to add in Principal  ADD EXCEPTIONS
 	{	
 		catListDao.deleteCat(catId);
 		
