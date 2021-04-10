@@ -29,8 +29,10 @@
       <h3>Cat Summary</h3>
       <p>{{ cat.summary }}</p>
     </div>
-    
-    <div class="deleteCats" v-for="cat in catsArray" v-bind:key="cat.catId">
+     <div class="alert alert-danger" role="alert" v-if="registrationErrors">
+        {{ registrationErrorMsg }}
+      </div>
+    <div class="deleteCats" v-for="cat in catsArray" v-bind:key="cat.catId" >   
     <button type="submit" v-on:click="deleteCat" class="deleteButton" value="Delete Profile">Delete This Profile</button>
     </div>
     
@@ -50,6 +52,8 @@ export default {
   data() {
     return {
       catsArray: [],
+      registrationErrors: false,
+      registrationErrorMsg: 'There were problems deleting this user.',
     };
     
   },
@@ -70,14 +74,17 @@ export default {
         .then((response) => {
           console.log(response.status);
           if (response.status == "204") {
-            //success
+            this.registrationErrors = true;
             this.$router.push("/");
           }
         })
         .catch((error) => {
-          // handle an error
-          console.log(error);
-        });
+            const response = error.response;
+            this.registrationErrors = true;
+            if (response.status === 400) {
+              this.registrationErrorMsg = 'Bad Request: Validation Errors';
+            }
+          });
   },
   },
   created() {

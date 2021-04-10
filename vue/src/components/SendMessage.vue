@@ -1,8 +1,8 @@
 <template>
  
-<div class="msgcontainer">
+<div class="msgcontainer" v-bind:key="cat.catId">
     <h1>Send an instant meow-ssage</h1>
-    <form class="sendMsg" >
+    <form class="sendMsg" @submit.prevent="sendMsg">
       <label for="fname">Sender Name</label>
       <input type="text" id="fname" name="name" v-model="cat.sender" placeholder="Sender name.." />
 
@@ -35,7 +35,7 @@ export default {
   data() {
     return {
         cat: {
-            catId:'',
+            
             sender:'',
             message:'',
         }
@@ -45,8 +45,9 @@ export default {
   methods: {
     
     sendMsg() {
+    const catId = this.$store.state.catId;
       catService
-        .msgCat(this.cat)
+        .msgCat(catId)
         .then((response) => {
           console.log(response.status);
           if (response.status == "201") {

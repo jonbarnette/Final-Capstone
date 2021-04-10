@@ -57,7 +57,7 @@ public class CatListController
 		
 	}
 	
-	
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@RequestMapping(value="/cats/{catId}", method = RequestMethod.DELETE)
 	public void deleteCatProfile(@Valid @PathVariable("catId") int catId) //Might need to add in Principal  ADD EXCEPTIONS
