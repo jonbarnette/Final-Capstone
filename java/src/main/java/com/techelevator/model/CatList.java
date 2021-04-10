@@ -12,8 +12,23 @@ public class CatList {
 	private String address; //this is the last seen location
 	private String summary; //this is the full summary in the details page
 	private int catId; //will be the foreign key for the database
+	private String sender;
+	private String message;
 	
 	
+	
+	public String getSender() {
+		return sender;
+	}
+	public void setSender(String sender) {
+		this.sender = sender;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
 	public String getImageName() {
 		return imageName;
 	}

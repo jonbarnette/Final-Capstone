@@ -66,44 +66,20 @@ public class CatListController
 		
 	}
 	
+	//Messaging System
 	
+	@RequestMapping(path="/msg/{catId}", method =RequestMethod.GET)
+	public List<CatList> getCatMsg(@PathVariable int catId)
+	{
+		return catListDao.retrieveCatMessage(catId);
+	}
 	
-	
-	
-////	Mapped as a PUT Method to update transfers using /transfers/update/{id}
-//	@PutMapping(“/update/{id}“)
-//	public Transfer updateTransfer(@RequestBody Transfer transfer, Principal principal, @PathVariable int id)
-//	{
-//		Transfer updatedTransfer = new Transfer();
-//		
-//		if(isValidUser(transfer, principal))
-//		{
-//			updatedTransfer = transferDao.update(transfer);
-//		}
-//		return updatedTransfer;
-//	}
-//	
-////	Mapped as a POST Method using base url of /transfers
-//	@PostMapping()
-//	public Transfer createTransfer(@RequestBody Transfer transfer, Principal principal)
-//	{
-//		Transfer newTransfer = new Transfer();
-//		
-//		if(isValidUser(transfer, principal))
-//		{
-//			newTransfer = transferDao.create(transfer);	
-//		}
-//		
-//		return newTransfer;
-//	}
-//	
-//	private boolean isValidUser(Transfer transfer, Principal principal)
-//	{
-//		if(principal.getName().equalsIgnoreCase(transfer.getUserFrom()) ||
-//				principal.getName().equalsIgnoreCase(transfer.getUserTo()))
-//		{
-//			return true;
-//		}
-//		return false;
-//	}
+	@ResponseStatus(HttpStatus.CREATED)
+	@RequestMapping(path="/msg", method =RequestMethod.POST)
+	public void msgCat(@RequestBody CatList catList) //Might need to add in Principal
+	{
+		catListDao.addMessage(catList);
+		
+	}
+
 }

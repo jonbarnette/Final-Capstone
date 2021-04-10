@@ -74,6 +74,32 @@ public class JDBCCatListDAO implements CatListDAO {
 		
 	}
 	
+	public List<CatList> retrieveCatMessage(int catId) {
+		
+		List<CatList> users = new ArrayList<>();
+        String sql = "SELECT sender, message " +
+        				"FROM msystem " +
+        				"WHERE cat_id = ?";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, catId);
+        while(results.next()) {
+            CatList user = mapRowToCatDetails(results);
+            users.add(user);
+        }
+
+        return users;
+	}
+	
+	
+	@Override
+	public void addMessage(CatList catList) {
+		String sql = "INSERT INTO msystem (cat_id, sender, message) " + 
+						"VALUES (?, ?, ?)";
+		
+		jdbcTemplate.update(sql, catList.getCatId(), catList.getSender(), catList.getMessage());
+		
+	}
+	
 	
 	
 	private CatList mapRowToCatList(SqlRowSet rs) {

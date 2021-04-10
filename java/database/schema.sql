@@ -41,6 +41,14 @@ CREATE TABLE catlist (
 	CONSTRAINT FK_catlist_users FOREIGN KEY (cat_id) REFERENCES users (user_id)
 );
 
+CREATE TABLE msystem (
+	cat_id int NOT NULL,
+	sender varchar(50) NOT NULL,
+	message varchar(1000) NOT NULL,
+	CONSTRAINT PK_msystem PRIMARY KEY (cat_id),
+	CONSTRAINT FK_msystem_users FOREIGN KEY (cat_id) REFERENCES users (user_id)
+);
+
 -- Inserting users into USERS table
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
 INSERT INTO users (username,password_hash,role) VALUES ('puma','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');

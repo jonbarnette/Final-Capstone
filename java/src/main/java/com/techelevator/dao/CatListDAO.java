@@ -14,5 +14,9 @@ public interface CatListDAO {
 	void addCat(CatList catList);
 	
 	void deleteCat(int catId);
+	
+	List<CatList> retrieveCatMessage(int catId);
+	
+	void addMessage(CatList catList);
 
 }
