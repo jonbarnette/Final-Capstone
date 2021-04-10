@@ -4,7 +4,7 @@
    
   
     <user-details></user-details>
-   <send-message v-if="userId"></send-message>
+    
     <!-- <p>Under Catstruction. Please excuse the meows</p>
     <img class="water-cat" src='../Assets/CatUsers/1015.jpg' /> -->
   </div>
@@ -14,14 +14,14 @@
 
 <script>
 import UserDetails from '../components/UserDetails.vue';
-import SendMessage from '../components/SendMessage.vue';
+
 
 
 export default {
   name: "catdetails",
   components: {
     UserDetails,
-    SendMessage,
+    
   }, 
   methods: {
 

@@ -1,8 +1,8 @@
 <template>
  
 <div class="msgcontainer">
-    
-    <form class="sendMsg" @submit.prevent="sendMsg">
+    <h1>Send an instant meow-ssage</h1>
+    <form class="sendMsg" >
       <label for="fname">Sender Name</label>
       <input type="text" id="fname" name="name" v-model="cat.sender" placeholder="Sender name.." />
 
@@ -16,7 +16,9 @@
         style="height: 100px"
         required
       ></textarea>
+      <div>
      <button type="submit" class="sendMsgButton" value="Send Message">Send Message</button>
+     </div>
     </form>
     
     
@@ -32,10 +34,16 @@ export default {
 
   data() {
     return {
+        cat: {
+            catId:'',
+            sender:'',
+            message:'',
+        }
       
     };
   },
   methods: {
+    
     sendMsg() {
       catService
         .msgCat(this.cat)
@@ -58,11 +66,12 @@ export default {
 </script>
 
 <style scoped>
-* {
+/* * {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-}
+  justify-content: center;
+} */
 
 input[type="text"], select, textarea {
   width: 100%;
@@ -88,15 +97,19 @@ input[type="submit"] {
   width: 10em;
 }
 input[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: #f6faf6;
 }
-.msgcontainer5, form{
+.msgcontainer, form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 5px;
   background-color: #163DA1;
   padding: 20px;
   font-family: monospace;
   width: 25em;
   margin: 0 auto;
-  align-items: center;
+  
 }
 </style>
