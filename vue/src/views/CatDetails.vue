@@ -4,7 +4,7 @@
    
   
     <user-details></user-details>
-   
+   <send-message v-if="userId"></send-message>
     <!-- <p>Under Catstruction. Please excuse the meows</p>
     <img class="water-cat" src='../Assets/CatUsers/1015.jpg' /> -->
   </div>
@@ -13,13 +13,19 @@
 </template>
 
 <script>
-import UserDetails from '../components/UserDetails.vue'
+import UserDetails from '../components/UserDetails.vue';
+import SendMessage from '../components/SendMessage.vue';
+
 
 export default {
   name: "catdetails",
   components: {
-    UserDetails
+    UserDetails,
+    SendMessage,
   }, 
+  methods: {
+
+  },
   created() {
     const catId = this.$route.params.id;
     this.$store.commit("SET_CATID", catId);

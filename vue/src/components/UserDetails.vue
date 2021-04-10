@@ -1,5 +1,5 @@
 <template>
-  <div id="userdetail" @submit.once="deleteCat">
+  <div id="userdetail">
     <div id="userBio" v-for="cat in catsArray" v-bind:key="cat.catId">
       <div>
         <img class="detailImage" v-bind:src="getImageURL(cat.imageName)" />
@@ -26,6 +26,7 @@
       <h3>Cat Summary</h3>
       <p>{{ cat.summary }}</p>
     </div>
+    
     <div class="deleteCats" v-for="cat in catsArray" v-bind:key="cat.catId">
     <button type="submit" v-on:click="deleteCat" class="deleteButton" value="Delete Profile">Delete This Profile</button>
     </div>
@@ -42,6 +43,7 @@ export default {
     return {
       catsArray: [],
     };
+    
   },
 
   methods: {
@@ -85,8 +87,10 @@ export default {
         console.log(error.statusMsg);
       });
   },
-  
 };
+
+
+
 </script>
 
 
