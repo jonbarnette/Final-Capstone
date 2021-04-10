@@ -1,5 +1,8 @@
 <template>
-  <div id="userdetail" @submit.once="deleteCat">
+  <div id="userdetail">
+    <div>
+    <send-message></send-message>
+    </div>
     <div id="userBio" v-for="cat in catsArray" v-bind:key="cat.catId">
       <div>
         <img class="detailImage" v-bind:src="getImageURL(cat.imageName)" />
@@ -26,22 +29,29 @@
       <h3>Cat Summary</h3>
       <p>{{ cat.summary }}</p>
     </div>
+    
     <div class="deleteCats" v-for="cat in catsArray" v-bind:key="cat.catId">
     <button type="submit" v-on:click="deleteCat" class="deleteButton" value="Delete Profile">Delete This Profile</button>
     </div>
+    
   </div>
 </template>
 
 <script>
+import SendMessage from "../components/SendMessage.vue";
 import catService from "@/services/CatService.js";
 
 export default {
   name: "user-details",
+  components: {
+    SendMessage,
+  },
 
   data() {
     return {
       catsArray: [],
     };
+    
   },
 
   methods: {
@@ -85,8 +95,10 @@ export default {
         console.log(error.statusMsg);
       });
   },
-  
 };
+
+
+
 </script>
 
 

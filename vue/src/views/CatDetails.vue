@@ -4,7 +4,7 @@
    
   
     <user-details></user-details>
-   
+    
     <!-- <p>Under Catstruction. Please excuse the meows</p>
     <img class="water-cat" src='../Assets/CatUsers/1015.jpg' /> -->
   </div>
@@ -13,13 +13,19 @@
 </template>
 
 <script>
-import UserDetails from '../components/UserDetails.vue'
+import UserDetails from '../components/UserDetails.vue';
+
+
 
 export default {
   name: "catdetails",
   components: {
-    UserDetails
+    UserDetails,
+    
   }, 
+  methods: {
+
+  },
   created() {
     const catId = this.$route.params.id;
     this.$store.commit("SET_CATID", catId);
