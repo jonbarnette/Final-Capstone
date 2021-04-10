@@ -64,7 +64,7 @@ public class CatListController
 	{	
 		catListDao.deleteCat(catId);
 		
-	}
+	}  
 	
 	//Messaging System
 	
