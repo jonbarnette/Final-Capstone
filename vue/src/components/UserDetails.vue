@@ -27,7 +27,7 @@
       <p>{{ cat.summary }}</p>
     </div>
     <div class="deleteCats" v-for="cat in catsArray" v-bind:key="cat.catId">
-    <button type="submit" class="deleteButton" value="Delete Profile">Delete This Profile</button>
+    <button type="submit" v-on:click="deleteCat" class="deleteButton" value="Delete Profile">Delete This Profile</button>
     </div>
   </div>
 </template>
@@ -51,23 +51,8 @@ export default {
     getImageURL(pic) {
       return require("../Assets/CatUsers/" + pic);
     },
-  },
-  created() {
-    const catId = this.$store.state.catId;
 
-    catService
-      .getCatDetails(catId)
-      .then((response) => {
-        console.log(response);
-        console.log(response.data);
-
-        this.catsArray = response.data;
-      })
-      .catch((error) => {
-        console.log(error.statusMsg);
-      });
-  },
-  deleteCat() {
+    deleteCat() {
       const catId = this.$store.state.catId;
 
       catService
@@ -84,6 +69,23 @@ export default {
           console.log(error);
         });
   },
+  },
+  created() {
+    const catId = this.$store.state.catId;
+
+    catService
+      .getCatDetails(catId)
+      .then((response) => {
+        console.log(response);
+        console.log(response.data);
+
+        this.catsArray = response.data;
+      })
+      .catch((error) => {
+        console.log(error.statusMsg);
+      });
+  },
+  
 };
 </script>
 
