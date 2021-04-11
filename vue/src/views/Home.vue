@@ -8,10 +8,6 @@
     <hr>
     <p id="demo" style="font-size:35px"></p>
   </div>
-  <img class="catimage" src="../Assets/CatUsers/3001.jpg" />
-  <div class="bottomleft">
-    <p>Meow Meow Meow</p>
-  </div>
 </div>
 </template>
 
