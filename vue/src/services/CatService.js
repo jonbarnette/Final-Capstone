@@ -23,12 +23,12 @@ export default {
         console.log('delete' + catId)
         return axios.delete('/cats/' + catId)
     },
-    msgCat(catId) {
-        return axios.post('/msg', catId)
+    msgCat(cat) {
+        return axios.post('/message', cat)
     },
     getCatMsg(catId) {
-        console.log(catId)
-        return axios.get('/cats/' + catId)
+        console.log('msg' + catId)
+        return axios.get('/message/' + catId)
     },
 
 

@@ -1,4 +1,5 @@
 package com.techelevator.controller;
+import java.security.Principal;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -68,17 +69,17 @@ public class CatListController
 	
 	//Messaging System
 	
-	@RequestMapping(path="/msg/{catId}", method =RequestMethod.GET)
+	@RequestMapping(path="/message/{catId}", method =RequestMethod.GET)
 	public List<CatList> getCatMsg(@PathVariable int catId)
 	{
 		return catListDao.retrieveCatMessage(catId);
 	}
 	
 	@ResponseStatus(HttpStatus.CREATED)
-	@RequestMapping(path="/msg", method =RequestMethod.POST)
-	public void msgCat(@RequestBody CatList catList) //Might need to add in Principal
+	@RequestMapping(path="/message", method =RequestMethod.POST)
+	public void addMessage(@RequestBody CatList catList) //Might need to add in Principal
 	{
-		catListDao.addMessage(catList);
+		catListDao.msgCat(catList);
 		
 	}
 

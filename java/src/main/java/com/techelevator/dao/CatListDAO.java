@@ -17,6 +17,6 @@ public interface CatListDAO {
 	
 	List<CatList> retrieveCatMessage(int catId);
 	
-	void addMessage(CatList catList);
+	void msgCat(CatList catList);
 
 }

@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS users;
 DROP SEQUENCE IF EXISTS seq_user_id;
 DROP TABLE IF EXISTS catlist;
 DROP SEQUENCE IF EXISTS seq_cat_id;
+DROP TABLE IF EXISTS msystem;
 
 CREATE SEQUENCE seq_user_id
   INCREMENT BY 1
@@ -42,10 +43,9 @@ CREATE TABLE catlist (
 );
 
 CREATE TABLE msystem (
-	cat_id int NOT NULL,
+	cat_id int,
 	sender varchar(50) NOT NULL,
 	message varchar(1000) NOT NULL,
-	CONSTRAINT PK_msystem PRIMARY KEY (cat_id),
 	CONSTRAINT FK_msystem_users FOREIGN KEY (cat_id) REFERENCES users (user_id)
 );
 

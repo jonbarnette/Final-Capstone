@@ -1,13 +1,13 @@
 <template>
  
-<div class="msgcontainer" v-bind:key="cat.catId">
+<div class="msgcontainer">
     <h1>Send an instant meow-ssage</h1>
     <form class="sendMsg" @submit.prevent="sendMsg">
-      <label for="fname">Sender Name</label>
-      <input type="text" id="fname" name="name" v-model="cat.sender" placeholder="Sender name.." />
+      <label for="sender">Sender Name</label>
+      <input type="text" id="sender" name="sender" v-model="cat.sender" placeholder="Sender name.." />
 
       
-      <label for="summary">Message</label>
+      <label for="message">Message</label>
       <textarea
         id="message"
         name="message"
@@ -17,7 +17,7 @@
         required
       ></textarea>
       <div>
-     <button type="submit" class="sendMsgButton" value="Send Message">Send Message</button>
+     <button v-for="cats in catsArray" v-bind:key="cats.catId" type="submit" class="sendMsgButton" value="Send Message">Send Message</button>
      </div>
     </form>
     
@@ -34,24 +34,25 @@ export default {
 
   data() {
     return {
+      catsArray: [],
         cat: {
-            
+            cat_id: '7',
             sender:'',
             message:'',
-        }
+        },
       
     };
   },
   methods: {
     
     sendMsg() {
-    const catId = this.$store.state.catId;
       catService
-        .msgCat(catId)
+        .msgCat(this.cat)
         .then((response) => {
           console.log(response.status);
           if (response.status == "201") {
-              console.log("Message sent")
+              this.$router.push("/")
+
             //success
           }
         })
@@ -59,7 +60,22 @@ export default {
           // handle an error
           console.log(error);
         });
+    },
   },
+  created() {
+    const catId = this.$store.state.catId;
+
+    catService
+      .getCatDetails(catId)
+      .then((response) => {
+        console.log(response);
+        console.log(response.data);
+
+        this.catsArray = response.data;
+      })
+      .catch((error) => {
+        console.log(error.statusMsg);
+      });
   },
 };
 
