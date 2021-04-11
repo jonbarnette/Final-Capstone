@@ -7,7 +7,7 @@
     <!-- The video -->
   <div>
   <video autoplay muted loop id="myVideo">
-  <source src="../src/Assets/computer cat.mp4" type="video/mp4">
+  <source src="../src/Assets/computer_cat.mp4" type="video/mp4">
   </video>
   </div>
     <div>
@@ -40,10 +40,12 @@ export default {
 }
 
 /* Style the video: 100% width and height to cover the entire window */
-#myVideo {
-  width: 100%;
+ #myVideo {
+    width: 100%;
     height: 600px;
     object-fit: cover;
     z-index: -100;
-}
+    } 
+
+    
 </style>
