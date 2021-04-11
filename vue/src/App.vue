@@ -7,7 +7,7 @@
     <!-- The video -->
   <div>
   <video autoplay muted loop id="myVideo">
-  <source src="../src/Assets/computer cat.mp4" type="video/mp4">
+  <source src="../src/Assets/computer_cat.mp4" type="video/mp4">
   </video>
   </div>
     <div>
