@@ -46,6 +46,7 @@ export default {
 .socialmedia {
   display: flex;
   justify-content: space-around;
+  margin-top: 10em;
 }
 
 .fa {

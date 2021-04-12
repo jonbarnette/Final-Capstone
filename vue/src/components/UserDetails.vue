@@ -118,8 +118,11 @@ button[type="submit"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 7.4%;
-  height: 5%;
+  width: 7.313%;
+  height: 2%;
+  position:absolute;
+  top: 2em;
+  right: 5em;
 }
 button[type="submit"]:hover {
   background-color: #ff0000;

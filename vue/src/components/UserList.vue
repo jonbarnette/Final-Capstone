@@ -1,7 +1,7 @@
 <template>
   <div id="userlist">
     <div id="searchUsers">
-        <label for="occupation">Enter occupation:</label>
+        <label for="occupation">Search by occupation:</label>
         <input type="text" name="occupation" v-model="occupationFilter" />
             
     </div>
@@ -16,7 +16,7 @@
 
         <div class="container">
           <!-- <h3>{{cat.name}}</h3> -->
-           <router-link v-bind:to="{ name: 'catdetails', params: {id: cat.catId }}">{{cat.name}}</router-link>
+           <router-link style="text-decoration: none;" v-bind:to="{ name: 'catdetails', params: {id: cat.catId }}">{{cat.name}}</router-link>
           </div>
         <div class="container">
           <h5>{{cat.occupation}}</h5>
@@ -77,7 +77,10 @@ data() {
 </script>
 
 <style>
-
+#userlist {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
 
 .image {
   width: 100%!important;
