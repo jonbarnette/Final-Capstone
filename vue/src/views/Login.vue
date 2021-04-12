@@ -82,4 +82,26 @@ input[type=password], [type=submit] {
     border: 2px solid #163da1;
     border-radius: 6px;
 }
+button[type="submit"] {
+  background-color: #163da1;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 8em;
+  align-items: center;
+  
+}
+button[type="submit"]:hover {
+  background-color: #f6faf6;
+  color: #163da1;
+}
+.form-signin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto auto;
+}
 </style>

@@ -17,7 +17,7 @@
         required
       ></textarea>
       <div>
-     <button type="submit" class="sendMsgButton" value="Send Message">Send Message</button>
+     <button v-for="cat in catsArray" v-bind:key="cat.catId" type="submit" class="sendMsgButton" value="Send Message">Send Message</button>
      </div>
     </form>
     
@@ -31,10 +31,15 @@ import catService from "../services/CatService";
 
 export default {
   name: "send-message",
+  props:{},
 
   data() {
     return {
         cat: {
+<<<<<<< HEAD
+=======
+            cat_id: '',
+>>>>>>> fcadc6a101971973f5c501f1d4f856a5a6c7bda8
             sender:'',
             message:'',
         },

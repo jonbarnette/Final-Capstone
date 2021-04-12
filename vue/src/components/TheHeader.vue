@@ -18,11 +18,11 @@ export default {};
 
 <style>
 
-#nav {
+.link {
   font-family: "Work Sans",sans-serif;
   font-size: 1.5em;
-  text-align: center;
-  margin: 1em;
+  text-align: right;
+  margin: 1em 0em 10em 0em;
 }
 
 .link1 {

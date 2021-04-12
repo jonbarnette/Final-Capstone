@@ -1,5 +1,6 @@
 <template>
 <div>
+<div id="footerposition">
   <div class="socialmedia">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,10 +16,11 @@
   </div>
   <div class="container1">
       <div id="copycat">&#169; {{ copyText }}</div>
-        <div id="contact">Contact</div>
-        <div id="aboutUs">About Us</div>
-        <div id="admin">Admin Login</div>
+        <div id="contact"><a href="#" style="text-decoration: none;">Contact</a></div>
+        <div id="aboutUs"><a a href="#" style="text-decoration: none;">About Us</a></div>
+        <div id="admin"><a href="#" style="text-decoration: none;">Admin Login</a></div>
   </div>
+</div>
 </div>
 </template>
 
@@ -27,25 +29,25 @@ export default {
   name: "the-footer",
   data() {
     return {
-      copyText: "It's the cat's pajamas!",
+      copyText: "Tabby Pro 2021",
     };
   },
 };
 </script>
 
 <style>
+
 .container1 {
     display: flex;
-    
     text-align: center;
     padding: auto;
     justify-content: space-between;
     margin: 1em;
-
 }
 .socialmedia {
   display: flex;
   justify-content: space-around;
+  margin-top: 10em;
 }
 
 .fa {
