@@ -43,9 +43,12 @@ CREATE TABLE catlist (
 );
 
 CREATE TABLE msystem (
+	id serial, 
 	cat_id int,
 	sender varchar(50) NOT NULL,
 	message varchar(1000) NOT NULL,
+
+	CONSTRAINT PK_msystem PRIMARY KEY (id),
 	CONSTRAINT FK_msystem_users FOREIGN KEY (cat_id) REFERENCES users (user_id)
 );
 

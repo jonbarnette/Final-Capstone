@@ -24,6 +24,9 @@ export default {
         return axios.delete('/cats/' + catId)
     },
     msgCat(cat) {
+        console.log(cat.catId)
+        console.log(cat.sender)
+        console.log(cat.message)
         return axios.post('/message', cat)
     },
     getCatMsg(catId) {

@@ -2,7 +2,9 @@
  
 <div class="msgcontainer">
     <h1>Send an instant meow-ssage</h1>
+
     <form class="sendMsg" @submit.prevent="sendMsg">
+      
       <label for="sender">Sender Name</label>
       <input type="text" id="sender" name="sender" v-model="cat.sender" placeholder="Sender name.." />
 
@@ -17,7 +19,7 @@
         required
       ></textarea>
       <div>
-     <button v-for="cat in catsArray" v-bind:key="cat.catId" type="submit" class="sendMsgButton" value="Send Message">Send Message</button>
+     <button type="submit" class="sendMsgButton" value="Send Message">Send Message</button>
      </div>
     </form>
     
@@ -36,7 +38,7 @@ export default {
   data() {
     return {
         cat: {
-            cat_id: '',
+            catId: '',
             sender:'',
             message:'',
         },
@@ -46,8 +48,10 @@ export default {
   methods: {
     
     sendMsg() {
+      this.cat.catId = this.$store.state.catId;
+     
       catService
-        .msgCat(this.$store.catId + this.cat)
+        .msgCat(this.cat)
         .then((response) => {
           console.log(response.status);
           if (response.status == "201") {
@@ -58,7 +62,7 @@ export default {
         })
         .catch((error) => {
           // handle an error
-          console.log(error);
+          console.log(error.status);
         });
     },
   },

@@ -77,7 +77,7 @@ public class CatListController
 	
 	@ResponseStatus(HttpStatus.CREATED)
 	@RequestMapping(path="/message", method =RequestMethod.POST)
-	public void addMessage(@RequestBody CatList catList) //Might need to add in Principal
+	public void addMessage(@Valid @RequestBody CatList catList) //Might need to add in Principal
 	{
 		catListDao.msgCat(catList);
 		
