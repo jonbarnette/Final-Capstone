@@ -55,7 +55,7 @@ export default {
         .then((response) => {
           console.log(response.status);
           if (response.status == "201") {
-              this.$router.push("/")
+              this.$router.push("/cats")
 
             //success
           }

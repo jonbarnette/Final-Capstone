@@ -1,18 +1,20 @@
 <template>
   
   <div class="catdetails">
-   
-  
+    <div>
     <user-details></user-details>
-    
-    <!-- <p>Under Catstruction. Please excuse the meows</p>
-    <img class="water-cat" src='../Assets/CatUsers/1015.jpg' /> -->
+    </div>
+
+    <div>
+   <send-message></send-message>
+    </div>
   </div>
   
 
 </template>
 
 <script>
+import SendMessage from '../components/SendMessage.vue';
 import UserDetails from '../components/UserDetails.vue';
 
 
@@ -21,6 +23,7 @@ export default {
   name: "catdetails",
   components: {
     UserDetails,
+    SendMessage,
     
   }, 
   methods: {

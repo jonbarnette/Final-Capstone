@@ -14,9 +14,16 @@ public class CatList {
 	private int catId; //will be the foreign key for the database
 	private String sender;
 	private String message;
+	private int msgId;
 	
 	
 	
+	public int getMsgId() {
+		return msgId;
+	}
+	public void setMsgId(int msgId) {
+		this.msgId = msgId;
+	}
 	public String getSender() {
 		return sender;
 	}

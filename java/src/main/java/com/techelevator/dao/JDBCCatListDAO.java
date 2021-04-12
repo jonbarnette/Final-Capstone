@@ -77,7 +77,7 @@ public class JDBCCatListDAO implements CatListDAO {
 	public List<CatList> retrieveCatMessage(int catId) {
 		
 		List<CatList> users = new ArrayList<>();
-        String sql = "SELECT sender, message " +
+        String sql = "SELECT * " +
         				"FROM msystem " +
         				"WHERE cat_id = ?";
 
@@ -129,6 +129,7 @@ public class JDBCCatListDAO implements CatListDAO {
 	
 	private CatList mapRowToCatMessage(SqlRowSet rs) {
         CatList user = new CatList();
+        user.setMsgId(rs.getInt("id"));
         user.setCatId(rs.getInt("cat_id"));
         user.setSender(rs.getString("sender"));
         user.setMessage(rs.getString("message"));
