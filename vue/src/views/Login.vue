@@ -74,12 +74,12 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 input[type=password], [type=submit] {
     margin: 30px;
     width: 10%;
     padding: 12px 14px;
-    border: 2px solid green;
+    border: 2px solid #163da1;
     border-radius: 6px;
 }
 </style>

@@ -129,8 +129,8 @@ input[type="text"], select, textarea {
 ::placeholder {
   color: black;
 }
-input[type="submit"] {
-  background-color: #4caf50;
+button[type="submit"] {
+  background-color: #163da1;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -138,12 +138,13 @@ input[type="submit"] {
   cursor: pointer;
   width: 10em;
 }
-input[type="submit"]:hover {
-  background-color: #45a049;
+button[type="submit"]:hover {
+  background-color: #f6faf6;
+  color: #163da1;
 }
 .container5, form{
   border-radius: 5px;
-  background-color: #163DA1;
+  color: #163DA1;
   padding: 20px;
   font-family: monospace;
   width: 25em;

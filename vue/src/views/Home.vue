@@ -8,6 +8,11 @@
     <hr>
     <p id="demo" style="font-size:35px"></p>
   </div>
+  <div>
+  <video autoplay muted loop id="myVideo">
+  <source src="../Assets/computer_cat.mp4" type="video/mp4">
+  </video>
+  </div>
 </div>
 </template>
 
@@ -48,16 +53,13 @@ var countdownfunction = setInterval(function() {
 </script>
 
 <style>
-.catimage {
-  
-  height: 100%;
-  width: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  width: 99.67vw;
+    height: 600px;
+    object-fit: cover;
+    z-index: -100;
+    margin-left: -1%;
+    margin-right: -5%;
 }
-
-
-
 </style>

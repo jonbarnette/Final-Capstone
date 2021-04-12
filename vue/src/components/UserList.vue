@@ -106,7 +106,7 @@ data() {
 }
 
 .card:hover {
-  box-shadow: 0px 8px 8px 0px pink;
+  box-shadow: 0px 8px 8px 0px #163da1;
 }
 
 .container {
@@ -132,7 +132,7 @@ input[type=text] {
     margin: 30px;
     width: 10%;
     padding: 12px 14px;
-    border: 2px solid green;
+    border: 2px solid #163da1;
     border-radius: 6px;
 }
 

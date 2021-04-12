@@ -36,7 +36,7 @@ export default {
 <style>
 .container1 {
     display: flex;
-    float: center;
+    
     text-align: center;
     padding: auto;
     justify-content: space-between;

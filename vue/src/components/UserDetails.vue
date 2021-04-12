@@ -111,13 +111,28 @@ export default {
 
 
 <style scoped>
+
+button[type="submit"] {
+  background-color: #d6dae6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 7.4%;
+  height: 5%;
+}
+button[type="submit"]:hover {
+  background-color: #ff0000;
+  color: #163DA1;
+}
 .detailImage {
   display: block;
   width: 300px !important;
-  height: auto;
+  height: 250px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1em;
+  border-radius: 50%;
 }
 * {
   display:flex;
