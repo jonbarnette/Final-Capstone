@@ -48,6 +48,10 @@ export default {
   components: {
     SendMessage,
   },
+  props: {
+    catId: Number,
+
+  },
 
   data() {
     return {

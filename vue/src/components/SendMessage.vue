@@ -17,7 +17,7 @@
         required
       ></textarea>
       <div>
-     <button v-for="cats in catsArray" v-bind:key="cats.catId" type="submit" class="sendMsgButton" value="Send Message">Send Message</button>
+     <button type="submit" class="sendMsgButton" value="Send Message">Send Message</button>
      </div>
     </form>
     
@@ -34,9 +34,7 @@ export default {
 
   data() {
     return {
-      catsArray: [],
         cat: {
-            cat_id: '7',
             sender:'',
             message:'',
         },
@@ -47,7 +45,7 @@ export default {
     
     sendMsg() {
       catService
-        .msgCat(this.cat)
+        .msgCat(this.$store.catId + this.cat)
         .then((response) => {
           console.log(response.status);
           if (response.status == "201") {
