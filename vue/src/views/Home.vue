@@ -59,7 +59,7 @@ var countdownfunction = setInterval(function() {
     height: 600px;
     object-fit: cover;
     z-index: -100;
-    margin-left: -1%;
-    margin-right: -5%;
+    margin-left: -50%;
+    margin-right: -50%;
 }
 </style>
