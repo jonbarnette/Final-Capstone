@@ -2,20 +2,15 @@
   <div id="userlist">
     <div id="searchUsers">
         <label for="occupation">Search by occupation:</label>
-        <input type="text" name="occupation" v-model="occupationFilter" />
-            
+        <input type="text" name="occupation" v-model="occupationFilter" />     
     </div>
     <div class="body">
       <div class="card" v-for="cat in filteredCats" v-bind:key="cat.name" >
-
         <div>
           <img class="image" v-bind:src="getImageURL(cat.imageName)" />
         </div>
-
         <div class="info">
-
         <div class="container">
-          <!-- <h3>{{cat.name}}</h3> -->
            <router-link style="text-decoration: none;" v-bind:to="{ name: 'catdetails', params: {id: cat.catId }}">{{cat.name}}</router-link>
           </div>
         <div class="container">
@@ -78,7 +73,6 @@ data() {
 
 <style>
 #userlist {
-  margin-top: 5em;
   margin-bottom: 5em;
   text-align: center;
 }

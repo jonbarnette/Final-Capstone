@@ -1,13 +1,13 @@
 <template>
-  
   <div id="app">
     <div>
-    <the-header></the-header>
+      <the-header></the-header>
     </div>
-    
-  
     <div>
-    <the-footer></the-footer>
+      <router-view></router-view> 
+    </div>
+    <div>
+      <the-footer></the-footer>
     </div>
   </div>
 </template>
@@ -33,6 +33,11 @@ export default {
 * {
   color: #163da1;
   background-color: #d6dae6;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
 }
 
 </style>

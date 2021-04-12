@@ -1,5 +1,4 @@
 <template>
-<div>
 <div id="footerposition">
   <div class="socialmedia">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +19,6 @@
         <div id="aboutUs"><a a href="#" style="text-decoration: none;">About Us</a></div>
         <div id="admin"><a href="#" style="text-decoration: none;">Admin Login</a></div>
   </div>
-</div>
 </div>
 </template>
 
@@ -47,7 +45,7 @@ export default {
 .socialmedia {
   display: flex;
   justify-content: space-around;
-  margin-top: 10em;
+  margin-top: 10px;
 }
 
 .fa {
