@@ -1,5 +1,6 @@
 <template>
 <div>
+<div id="footerposition">
   <div class="socialmedia">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,6 +21,7 @@
         <div id="admin">Admin Login</div>
   </div>
 </div>
+</div>
 </template>
 
 <script>
@@ -34,14 +36,13 @@ export default {
 </script>
 
 <style>
+
 .container1 {
     display: flex;
-    
     text-align: center;
     padding: auto;
     justify-content: space-between;
     margin: 1em;
-
 }
 .socialmedia {
   display: flex;
