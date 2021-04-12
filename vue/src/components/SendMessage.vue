@@ -36,10 +36,7 @@ export default {
   data() {
     return {
         cat: {
-<<<<<<< HEAD
-=======
             cat_id: '',
->>>>>>> fcadc6a101971973f5c501f1d4f856a5a6c7bda8
             sender:'',
             message:'',
         },
