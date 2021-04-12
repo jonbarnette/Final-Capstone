@@ -17,6 +17,7 @@
 import AddCat from '../components/AddCat.vue';
 
 
+
 export default {
   name: "account",
   components: {

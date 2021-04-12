@@ -16,9 +16,9 @@
   </div>
   <div class="container1">
       <div id="copycat">&#169; {{ copyText }}</div>
-        <div id="contact">Contact</div>
-        <div id="aboutUs">About Us</div>
-        <div id="admin">Admin Login</div>
+        <div id="contact"><a href="#" style="text-decoration: none;">Contact</a></div>
+        <div id="aboutUs"><a a href="#" style="text-decoration: none;">About Us</a></div>
+        <div id="admin"><a href="#" style="text-decoration: none;">Admin Login</a></div>
   </div>
 </div>
 </div>
@@ -29,7 +29,7 @@ export default {
   name: "the-footer",
   data() {
     return {
-      copyText: "It's the cat's pajamas!",
+      copyText: "Tabby Pro 2021",
     };
   },
 };

@@ -80,6 +80,7 @@ data() {
 #userlist {
   margin-top: 5em;
   margin-bottom: 5em;
+  text-align: center;
 }
 
 .image {

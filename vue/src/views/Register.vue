@@ -98,4 +98,43 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+input[type=password] {
+    margin: 30px;
+    width: 10%;
+    padding: 12px 14px;
+    border: 2px solid #163da1;
+    border-radius: 6px;
+}
+
+button[type=submit] {
+    margin: 30px;
+    width: 10%;
+    padding: 12px 14px;
+    border: 2px solid #163da1;
+    border-radius: 6px;
+}
+button[type="submit"] {
+  background-color: #163da1;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 8em;
+  align-items: center;
+  
+}
+button[type="submit"]:hover {
+  background-color: #f6faf6;
+  color: #163da1;
+}
+.form-register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto auto;
+}
+
+</style>
