@@ -134,6 +134,10 @@ input[type=text] {
     border-radius: 6px;
 }
 
+label {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 
 
 
