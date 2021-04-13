@@ -1,16 +1,14 @@
 <template>
  
 <div class="msgcontainer">
-    <h1>Send an instant meow-ssage</h1>
+    <button v-on:click="catNinja = !catNinja"><h3>Send an instant meow-ssage</h3></button>
 
     <form class="sendMsg" @submit.prevent="sendMsg">
-      
-      <label for="sender">Sender Name</label>
-      <input type="text" id="sender" name="sender" v-model="cat.sender" placeholder="Sender name.." />
-
-      
-      <label for="message">Message</label>
+      <label v-show="catNinja" for="sender">Sender Name</label>
+      <input v-show="catNinja" type="text" id="sender" name="sender" v-model="cat.sender" placeholder="Sender name.." />
+      <label v-show="catNinja" for="message">Message</label>
       <textarea
+      v-show="catNinja"
         id="message"
         name="message"
         v-model="cat.message"
@@ -19,8 +17,8 @@
         required
       ></textarea>
       <div>
-     <button type="submit" class="sendMsgButton" value="Send Message">Send Message</button>
-     </div>
+        <button v-show="catNinja" type="submit" class="sendMsgButton" value="Send Message">Send Message</button>
+      </div>
     </form>
     
     
@@ -36,13 +34,14 @@ export default {
   props:{},
 
   data() {
+    
     return {
         cat: {
             catId: '',
             sender:'',
             message:'',
         },
-      
+      catNinja: false,
     };
   },
   methods: {
