@@ -2,10 +2,17 @@
 
   <div class="account">
     <!-- <h1>Welcome Back 'put cat/user name here'!</h1> -->
-    <p v-if="$store.state.token != '' ">Welcome {{$store.state.user.username}}</p>
-    
-    <receive-message></receive-message>
-  <add-cat></add-cat>
+    <div class="welcome">
+    <h1 v-if="$store.state.token != '' ">Welcome, {{$store.state.user.username}}</h1>
+    </div>
+    <div class="messageCatContainer">
+      <div class="rMessage">
+        <receive-message></receive-message>
+      </div>
+        <div class="plusCat">
+      <add-cat></add-cat>
+      </div>
+    </div>
    
   </div>
   
@@ -34,22 +41,27 @@ export default {
 </script>
 
 <style scoped>
-.water-cat {
-  height: 50%;
-  width: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+
+.welcome {
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+}
+.rMessage {
+  grid-area: rMessage;
+  margin-left: 10%;
+}
+.plusCat {
+  grid-area: plusCat;
 }
 
-.home {
-  text-align: center;
+.messageCatContainer {
+  display: grid;
+  grid-template-areas: 'rMessage plusCat'
+  
 }
 
-#delete {
-  font-size: .5em;
 
-}
 
 /* * {
   background-image: url("../Assets/CatUsers/1015.jpg");

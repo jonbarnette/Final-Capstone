@@ -184,6 +184,8 @@ button[type="submit"]:hover {
   border-style: outset;
   margin-left: 30px;
 
+  justify-content: flex-start;
+  text-align: center;
 }
 .lives {
   display: flex;
