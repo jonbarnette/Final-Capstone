@@ -46,7 +46,6 @@ export default {
   display: flex;
   justify-content: center;
   font-size: 35px;
-  font-family: 'Ledger', serif;
 }
 .rMessage {
   grid-area: rMessage;

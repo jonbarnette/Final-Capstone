@@ -55,14 +55,12 @@ export default {
   grid-area: msg-sender;
   padding-left: 15px;
   margin-right: 10px;
-  font-family: 'Ledger', serif;
   font-size: 1.5em;
 }
 .the-msg {
   grid-area: the-msg;
   padding-right: 15px;
   margin-left: 10px;
-  font-family: 'Ledger', serif;
   font-size: 1.5em;
 }
 #rcvMsg {
@@ -74,6 +72,5 @@ export default {
 .inbox {
   margin-left: 45%;
   font-size: 2.5em;
-  font-family: 'Ledger', serif;
 }
 </style>

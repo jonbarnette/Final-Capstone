@@ -143,7 +143,7 @@ button[type="submit"]:hover {
 .userbio {
   display:flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   text-align: center;
 }
 .live {
