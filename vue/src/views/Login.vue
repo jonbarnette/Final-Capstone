@@ -86,8 +86,8 @@ button[type="submit"] {
   background-color: #163da1;
   color: white;
   padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
+  border: 2px solid  #163da1;
+  border-radius: 2em;
   cursor: pointer;
   width: 8em;
   align-items: center;

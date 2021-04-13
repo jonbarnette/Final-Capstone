@@ -1,7 +1,7 @@
 <template>
   
   <div class="container5">
-    <button v-on:click="catNinja = !catNinja"><h3>Edit Cat</h3></button>
+    <button class="ninjaButton" v-on:click="catNinja = !catNinja"><h3>Edit Cat</h3></button>
     <form class="profile" @submit.prevent="submitForm">
       <label v-show="catNinja" for="fname">Name</label>
       <input v-show="catNinja" type="text" id="fname" name="name" v-model="cat.name" placeholder="Your name.." />
@@ -159,4 +159,20 @@ button[type="submit"]:hover {
   margin: 0 auto;
   align-items: center;
 }
+
+.ninjaButton {
+
+  border-radius: 3em;
+  border: 3px solid  #163DA1 ; 
+  background: transparent;
+  outline: 0;
+ 
+}
+.ninjaButton:active {
+            transform: scale(0.98);
+            /* Scaling button to 0.98 to its original size */
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+            /* Lowering the shadow */
+            
+        }
 </style>
