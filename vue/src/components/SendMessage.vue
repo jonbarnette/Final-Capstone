@@ -1,7 +1,7 @@
 <template>
  
 <div class="msgcontainer">
-    <button v-on:click="catNinja = !catNinja"><h3>Send an instant meow-ssage</h3></button>
+    <button class="ninjaButton" v-on:click="catNinja = !catNinja"><h3>Send an instant meow-ssage</h3></button>
 
     <form class="sendMsg" @submit.prevent="sendMsg">
       <label v-show="catNinja" for="sender">Sender Name</label>
@@ -111,8 +111,8 @@ button[type="submit"] {
   background-color: #163da1;
   color: white;
   padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
+  border: 2px solid #163da1;
+  border-radius: 2em;
   cursor: pointer;
   width: 10em;
 }
@@ -133,4 +133,21 @@ button[type="submit"]:hover {
   margin: 0 auto;
   
 }
+
+.ninjaButton {
+
+  border-radius: 3em;
+  border: 3px solid  #163DA1 ; 
+  background: transparent;
+  outline: 0;
+ 
+}
+.ninjaButton:active {
+            transform: scale(0.98);
+            /* Scaling button to 0.98 to its original size */
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+            /* Lowering the shadow */
+            
+        }
+
 </style>
