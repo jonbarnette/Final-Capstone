@@ -55,9 +55,11 @@ export default {
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
+   transition: background 1s, transform 1s;
 }
 .fa:hover {
     opacity: 0.7;
+    transform: rotate(360deg);
 }
 
 
