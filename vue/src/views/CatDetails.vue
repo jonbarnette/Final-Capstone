@@ -1,16 +1,12 @@
 <template>
-  
   <div class="catdetails">
     <div>
       <user-details></user-details>
     </div>
-    
     <div>
       <send-message></send-message>
     </div>
   </div>
-  
-
 </template>
 
 <script>

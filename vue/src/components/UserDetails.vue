@@ -1,35 +1,33 @@
 <template>
-  <div id="userdetail">
-    
-    <div id="userBio" v-for="cat in catsArray" v-bind:key="cat.catId">
-      <div>
-        <img class="detailImage" v-bind:src="getImageURL(cat.imageName)" />
+  <div class="infosec" >
+      <h2 v-for="cat in catsArray" v-bind:key="cat.catId">{{ cat.name }}</h2>
+    <div class="userDetail">
+      <div class="userbio" v-for="cat in catsArray" v-bind:key="cat.catId">
+        <div class="dImage">
+          <img class="detailImage" v-bind:src="getImageURL(cat.imageName)" />
+        </div>
+        <div class="desc">
+          <div>Breed: {{ cat.breed }}</div>
+          <div>Color: {{ cat.color }}</div>
+        </div>
+        <div class="occu">Occupation: {{ cat.occupation }}</div>
       </div>
-      <div>
-        <h2>{{ cat.name }}</h2>
-      </div>
-      <div>Lives: {{ cat.lives }}</div>
-      <div>Breed: {{ cat.breed }}</div>
-      <div>Color: {{ cat.color }}</div>
-      <div>Occupation: {{ cat.occupation }}</div>
-    </div>
 
-    <div
-      class="placeFrequented"
-      v-for="cat in catsArray"
-      v-bind:key="cat.catId"
-    >
-      <h3>List Of Places Frequented</h3>
+      <div class="lives" v-for="cat in catsArray" v-bind:key="cat.catId">Lives: {{ cat.lives }}</div>
 
-      <p>{{ cat.address }}</p>
-    </div>
-    <div class="summaryDetail" v-for="cat in catsArray" v-bind:key="cat.catId">
-      <h3>Cat Summary</h3>
-      <p>{{ cat.summary }}</p>
-    </div>
-     <div class="alert alert-danger" role="alert" v-if="registrationErrors">
-        {{ registrationErrorMsg }}
+      <div class="rightside">
+        <div class="placeFrequented" v-for="cat in catsArray" v-bind:key="cat.catId">
+          <h3>List Of Places Frequented</h3>
+          <p>{{ cat.address }}</p>
       </div>
+
+        <div class="summaryDetail" v-for="cat in catsArray" v-bind:key="cat.catId">
+          <h3>Cat Summary</h3>
+          <p>{{ cat.summary }}</p>
+        </div>
+    </div>  
+    </div>
+    <div class="alert alert-danger" role="alert" v-if="registrationErrors">{{ registrationErrorMsg }}</div>
     <div class="deleteCats" v-for="cat in catsArray" v-bind:key="cat.catId" >   
     <button type="submit" v-on:click="deleteCat" class="deleteButton" value="Delete Profile">Delete This Profile</button>
     </div>
@@ -110,8 +108,6 @@ export default {
 
 </script>
 
-
-
 <style scoped>
 
 button[type="submit"] {
@@ -130,6 +126,11 @@ button[type="submit"]:hover {
   background-color: #ff0000;
   color: #163DA1;
 }
+.desc {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 .detailImage {
   display: block;
   width: 300px !important;
@@ -139,8 +140,37 @@ button[type="submit"]:hover {
   margin-top: 1em;
   border-radius: 50%;
 }
-* {
+.userbio {
   display:flex;
   flex-direction: column;
+  justify-content: start;
+  text-align: center;
+}
+.live {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+  vertical-align: middle;
+
+}
+
+.rightside {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.userDetail {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.infosec {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 </style>
