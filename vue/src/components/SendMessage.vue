@@ -36,12 +36,12 @@ export default {
   data() {
     
     return {
+      catNinja: false,
         cat: {
             catId: '',
             sender:'',
             message:'',
         },
-      catNinja: false,
     };
   },
   methods: {

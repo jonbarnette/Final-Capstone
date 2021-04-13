@@ -1,20 +1,21 @@
 <template>
   
   <div class="container5">
-    
+    <button v-on:click="catNinja = !catNinja"><h3>Edit Cat</h3></button>
     <form class="profile" @submit.prevent="submitForm">
-      <label for="fname">Name</label>
-      <input type="text" id="fname" name="name" v-model="cat.name" placeholder="Your name.." />
+      <label v-show="catNinja" for="fname">Name</label>
+      <input v-show="catNinja" type="text" id="fname" name="name" v-model="cat.name" placeholder="Your name.." />
 
-      <label for="lives">Lives</label>
-      <input type="text" id="lives" name="lives" v-model="cat.lives" placeholder="How many lives left.."
+      <label v-show="catNinja" for="lives">Lives</label>
+      <input v-show="catNinja" type="text" id="lives" name="lives" v-model="cat.lives" placeholder="How many lives left.."
         required/>
 
-      <label for="breed">Breed</label>
-      <input type="text" id="breed" name="breed"  v-model="cat.breed" placeholder="Your breed.." />
+      <label v-show="catNinja" for="breed">Breed</label>
+      <input v-show="catNinja" type="text" id="breed" name="breed"  v-model="cat.breed" placeholder="Your breed.." />
 
-      <label for="color">Color</label>
+      <label v-show="catNinja" for="color">Color</label>
       <input
+      v-show="catNinja"
         type="text"
         id="color"
         name="color"
@@ -23,8 +24,9 @@
         required
       />
 
-      <label for="occupation">Occupation</label>
+      <label v-show="catNinja" for="occupation">Occupation</label>
       <input
+      v-show="catNinja"
         type="text"
         id="occupation"
         name="occupation"
@@ -33,8 +35,9 @@
         required
       />
 
-      <label for="address">Address</label>
+      <label v-show="catNinja" for="address">Address</label>
       <input
+      v-show="catNinja"
         type="text"
         id="address"
         name="address"
@@ -43,8 +46,9 @@
         required
       />
 
-      <label for="tagline">Tagline</label>
+      <label v-show="catNinja" for="tagline">Tagline</label>
       <textarea
+      v-show="catNinja"
         id="tagline"
         name="tagline"
         v-model="cat.tagline"
@@ -52,8 +56,9 @@
         style="height: 100px"
         required
       ></textarea>
-      <label for="summary">Summary</label>
+      <label v-show="catNinja" for="summary">Summary</label>
       <textarea
+      v-show="catNinja"
         id="summary"
         name="summary"
         v-model="cat.summary"
@@ -61,7 +66,7 @@
         style="height: 100px"
         required
       ></textarea>
-     <button type="submit" class="catProfileButton" value="Create Profile">Free Mice</button>
+     <button v-show="catNinja" type="submit" class="catProfileButton" value="Create Profile">Free Mice</button>
     </form>
   </div>
 </template>
@@ -75,6 +80,7 @@ export default {
 
   data() {
     return {
+      catNinja: false,
       cat: {
         name: '',
         imageName: '1015.jpg',
