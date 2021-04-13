@@ -1,28 +1,43 @@
 <template>
   <div class="infosec" >
-      <h2 v-for="cat in catsArray" v-bind:key="cat.catId">{{ cat.name }}</h2>
+      <h1 v-for="cat in catsArray" v-bind:key="cat.catId">{{ cat.name }}</h1>
     <div class="userDetail">
       <div class="userbio" v-for="cat in catsArray" v-bind:key="cat.catId">
-        <div class="dImage">
-          <img class="detailImage" v-bind:src="getImageURL(cat.imageName)" />
-        </div>
+        <img class="detailImage" v-bind:src="getImageURL(cat.imageName)" />
         <div class="desc">
-          <div>Breed: {{ cat.breed }}</div>
-          <div>Color: {{ cat.color }}</div>
+          <div><strong>Breed:</strong> {{ cat.breed }}</div>
+          <div><strong>Color:</strong> {{ cat.color }}</div>
         </div>
-        <div class="occu">Occupation: {{ cat.occupation }}</div>
+        <div class="occu"><strong>Occupation: </strong>{{ cat.occupation }}</div>
       </div>
 
-      <div class="lives" v-for="cat in catsArray" v-bind:key="cat.catId">Lives: {{ cat.lives }}</div>
+      <div class="lives" v-for="cat in catsArray" v-bind:key="cat.catId">
+        <img class="tomb" src="../Assets/tombstone.png" style="width:75%;"/>
+        <div class="dLives">
+          <h2 class="hLR">Lives Remaining</h2>
+          <h1 class="dLL">{{ cat.lives }}</h1>
+        </div>
+      </div>
 
       <div class="rightside">
+        <div class="rating">
+          <h3 class="rat">RATing</h3>
+          <div class="mice">
+            <img class="mice1" src="../Assets/mice-icon-10.jpg" />
+            <img class="mice2" src="../Assets/mice-icon-10.jpg" />
+            <img class="mice3" src="../Assets/mice-icon-10.jpg" />
+            <img class="mice4" src="../Assets/mice-icon-10.jpg" />
+            <img class="mice5" src="../Assets/mice-icon-10.jpg" />
+          </div>
+        </div>
+
         <div class="placeFrequented" v-for="cat in catsArray" v-bind:key="cat.catId">
-          <h3>List Of Places Frequented</h3>
+          <h3>Last Seen</h3>
           <p>{{ cat.address }}</p>
-      </div>
+        </div>
 
         <div class="summaryDetail" v-for="cat in catsArray" v-bind:key="cat.catId">
-          <h3>Cat Summary</h3>
+          <h3>More About Me</h3>
           <p>{{ cat.summary }}</p>
         </div>
     </div>  
@@ -129,48 +144,116 @@ button[type="submit"]:hover {
 .desc {
   display:flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
 }
+
+.rat {
+  margin-bottom: 20px;
+}
+
+.mice {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.mice1, .mice2, .mice3, .mice4, .mice5 {
+  display: block;
+  width: 20% !important;
+  height: 20%;
+  margin-bottom: 15px;
+}
+
 .detailImage {
   display: block;
-  width: 300px !important;
+  width: 250px !important;
   height: 250px;
+  margin-bottom: 15px;
+  border-radius: 20px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1em;
-  border-radius: 50%;
 }
 .userbio {
   display:flex;
   flex-direction: column;
-  justify-content: start;
-  text-align: center;
+  justify-content: space-between;
+  width: 33.33%;
+  border-style: outset;
+  margin-left: 30px;
+
 }
-.live {
+.lives {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   text-align: center;
-  justify-items: center;
-  vertical-align: middle;
+  width:33.33%;
+  position: relative;
+  margin-left: 25px;
+}
 
+.dLives {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hLR, .dLL{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.occu {
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .rightside {
   display:flex;
   flex-direction: column;
-  justify-content: flex-end;
+  text-align: center;
+  justify-content: space-between;
+  align-self: center;
+  width:33.33%;
+  margin-right: 30px;
+  margin-left: 30px;
 }
+
+.placeFrequented {
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 20px;
+  border-style: outset;
+}
+
+.summaryDetail {
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  border-style: outset;
+}
+
+.rating {
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 20px;
+  border-style: outset;
+}
+
 .userDetail {
   display:flex;
   flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
 }
 .infosec {
   display:flex;
   flex-direction: column;
-  justify-content: center;
   text-align: center;
 }
 </style>
