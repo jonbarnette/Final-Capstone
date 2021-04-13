@@ -2,7 +2,8 @@
 
   <div class="account">
     
-    <h1>Welcome Back 'put cat/user name here'!</h1>
+    <!-- <h1>Welcome Back 'put cat/user name here'!</h1> -->
+    <p v-if="$store.state.token != '' ">Welcome {{$store.state.user.username}}</p>
     <p>Under Catstruction. Please excuse the meows</p>
     <img class="water-cat" src='../Assets/CatUsers/1015.jpg' />
   <add-cat></add-cat>
@@ -23,6 +24,11 @@ export default {
   components: {
     AddCat
   },
+
+  data() {
+    return {};
+  }
+
 };
 </script>
 
