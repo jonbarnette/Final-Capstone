@@ -1,9 +1,9 @@
 <template>
 <div>
-  <h2>Inbox</h2>
-    <div id="userBio" v-for="msg in messageArray" v-bind:key="msg.catId">
-      <div>{{msg.sender}}</div>
-      <div>{{msg.message}}</div>
+  <h2 class="inbox">Inbox</h2>
+    <div id="rcvMsg" v-for="msg in messageArray" v-bind:key="msg.catId">
+      <div class="msg-sender">{{msg.sender}}: </div>
+      <div class="the-msg">{{msg.message}}</div>
     </div>
 </div>
 </template>
@@ -25,11 +25,7 @@ export default {
     
   },
 
-  methods: {
-    viewCatDetails() {
-      this.$router.push("/catdetails");
-    },
-  },
+  methods: {},
     
   created() {
     const catId = this.$store.state.catId;
@@ -55,5 +51,29 @@ export default {
 
 
 <style scoped>
-
+.msg-sender {
+  grid-area: msg-sender;
+  padding-left: 15px;
+  margin-right: 10px;
+  font-family: 'Ledger', serif;
+  font-size: 1.5em;
+}
+.the-msg {
+  grid-area: the-msg;
+  padding-right: 15px;
+  margin-left: 10px;
+  font-family: 'Ledger', serif;
+  font-size: 1.5em;
+}
+#rcvMsg {
+  display: grid;
+  grid-template-areas: 'msg-sender the-msg';
+  border: 2px solid transparent;
+  width: fit-content;
+}
+.inbox {
+  margin-left: 45%;
+  font-size: 2.5em;
+  font-family: 'Ledger', serif;
+}
 </style>

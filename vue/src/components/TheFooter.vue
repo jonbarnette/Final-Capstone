@@ -7,10 +7,6 @@
     <a href="#" class="fa fa-twitter"></a>
     <a href="#" class="fa fa-linkedin"></a>
     <a href="#" class="fa fa-youtube"></a>
-    <a href="#" class="fa fa-instagram"></a>
-    <a href="#" class="fa fa-snapchat-ghost"></a>
-    <a href="#" class="fa fa-tumblr"></a>
-    <a href="#" class="fa fa-vine"></a>
     <a href="#" class="fa fa-reddit"></a>
   </div>
   <div class="container1">
@@ -44,7 +40,7 @@ export default {
 }
 .socialmedia {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-top: 10px;
 }
 
