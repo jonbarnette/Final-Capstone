@@ -21,28 +21,7 @@ export default new Vuex.Store({
     token: currentToken || '',
     user: currentUser || {},
     catId: '',
-    catlist: [ {
-      imageName: require('../Assets/CatUsers/1001.jpg')
-    },
-
-    {
-    imageName: require('../Assets/CatUsers/1002.jpg')
-},
-
-{
-    imageName: require('../Assets/CatUsers/1003.jpg')
-},
-
-{
-    imageName: require('../Assets/CatUsers/1004.jpg')
-},
-
-{
-imageName: require('../Assets/CatUsers/1005.jpg')
-}
-
-]
-
+    
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
