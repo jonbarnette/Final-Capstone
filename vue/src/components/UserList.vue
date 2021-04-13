@@ -113,7 +113,8 @@ data() {
   align-items: center;
   justify-content: center;
   margin: 0px;
-}
+  font-family:"Work Sans",sans-serif;
+} 
 
 h3, h5 {
   margin: 0px;
