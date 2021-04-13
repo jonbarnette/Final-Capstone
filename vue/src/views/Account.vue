@@ -1,11 +1,10 @@
 <template>
 
   <div class="account">
-    
     <!-- <h1>Welcome Back 'put cat/user name here'!</h1> -->
     <p v-if="$store.state.token != '' ">Welcome {{$store.state.user.username}}</p>
-    <p>Under Catstruction. Please excuse the meows</p>
-    <img class="water-cat" src='../Assets/CatUsers/1015.jpg' />
+    
+    <receive-message></receive-message>
   <add-cat></add-cat>
    
   </div>
@@ -16,13 +15,15 @@
 <script>
 
 import AddCat from '../components/AddCat.vue';
+import ReceiveMessage from '../components/ReceiveMessage.vue';
 
 
 
 export default {
   name: "account",
   components: {
-    AddCat
+    AddCat,
+    ReceiveMessage,
   },
 
   data() {

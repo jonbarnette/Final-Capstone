@@ -4,9 +4,7 @@
     <div>
       <user-details></user-details>
     </div>
-    <div>
-      <receive-message></receive-message>
-    </div>
+    
     <div>
       <send-message></send-message>
     </div>
@@ -21,12 +19,12 @@ import UserDetails from '../components/UserDetails.vue';
 
 
 
+
 export default {
   name: "catdetails",
   components: {
     UserDetails,
     SendMessage,
-    
   }, 
   methods: {
 

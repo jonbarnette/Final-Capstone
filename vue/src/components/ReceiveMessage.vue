@@ -1,7 +1,7 @@
 <template>
 <div>
+  <h2>Inbox</h2>
     <div id="userBio" v-for="msg in messageArray" v-bind:key="msg.catId">
-        <h2>Inbox</h2>
       <div>{{msg.sender}}</div>
       <div>{{msg.message}}</div>
     </div>
@@ -14,19 +14,13 @@ import catService from "@/services/CatService.js";
 
 export default {
   name: "receive-message",
-  components: {
-    
-  },
-  props: {
-    catId: Number,
-
-  },
+  components: {},
+  
 
   data() {
     return {
       messageArray: [],
-      registrationErrors: false,
-      registrationErrorMsg: 'There were problems deleting this user.',
+      
     };
     
   },
