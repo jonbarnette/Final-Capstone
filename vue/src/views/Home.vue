@@ -3,16 +3,16 @@
     <div class="frontpageCats">
       <div class="cats">
         <img src="../Assets/CatUsers/HomepageCat.jpg" />
-        </div>
+      </div>
       <p id="work1">Hi I'm looking for work!</p>
       <div class="cats">
         <img src="../Assets/CatUsers/AlleyCat.jpg" />
         <p id="work2">Do you have a position open?</p>
       </div>
     </div>
-    <video autoplay muted loop id="myVideo">
+    <!-- <video autoplay muted loop id="myVideo">
       <source src="../Assets/computer_cat.mp4" type="video/mp4" />
-    </video>
+    </video> -->
   </div>
 </template>
 
@@ -39,12 +39,9 @@ export default {
 .frontpageCats {
   display: flex;
   flex-direction: row;
-  
+
   position: relative;
   background-color: transparent;
-
-
-  
 }
 
 .cats {
@@ -53,47 +50,39 @@ export default {
   justify-content: center;
   align-content: center;
   margin: 10px;
-  
   transition: transform 1.2s ease 0s;
-  border: 5px solid black;
+  border: 1.5px solid black;
   object-fit: cover;
 }
 
-
-
 .cats:hover {
-transition-delay: .1s;
- transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 #work1 {
   position: absolute;
-  top: 25%;
-  left: 45%;
+  top: 22%;
+  left: auto;
+  padding-left: 40rem;
   z-index: 100;
-  color:white;
+  color: white;
   background-color: transparent;
   font-size: 24px;
   font-weight: bold;
-  transform: translate(-50% ,-50%);
+  /* transform: translate(-50% ,-50%); */
   overflow: auto;
-  
-  
 }
 #work2 {
   position: absolute;
-  top: 40%;
-  right: 1%;
+  top: 35%;
+  right: auto;
+  padding-left: 5rem;
   z-index: 100;
-  color:white;
+  color: white;
   background-color: transparent;
   font-size: 24px;
   font-weight: bold;
-  transform: translate(-50% ,-50%);
-  overflow:auto;
-  
+  /* transform: translate(-50% ,-50%); */
+  overflow: auto;
 }
-
-
-
 </style>
