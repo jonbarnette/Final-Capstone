@@ -6,7 +6,7 @@ import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
 import CatList from '../views/CatList.vue'
-import Account from '../views/Account.vue'
+
 import CatDetails from '../views/CatDetails.vue'
 import About from '../views/About.vue'
 import AddCat from '../views/AddCat.vue'
