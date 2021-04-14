@@ -1,34 +1,52 @@
 <template>
   <div class="catdetails">
     <div>
+    <router-link :to="{ name: 'addcat' }">Edit</router-link>
       <user-details></user-details>
     </div>
     <div>
-      <div v-if="$store.state.token != '' && !firstTime ">
-        <receive-message></receive-message>
-      </div>
+     
       <send-message></send-message>
+      
     </div>
   </div>
 </template>
 
 <script>
+
 import SendMessage from "../components/SendMessage.vue";
 import UserDetails from "../components/UserDetails.vue";
-import ReceiveMessage from "../components/ReceiveMessage.vue";
 
 export default {
+
 
   
   name: "catdetails",
   components: {
     UserDetails,
     SendMessage,
-    ReceiveMessage,
+    
+   
   },
-  methods: {},
+   data() {
+    return {
+      firstTime: true,
+    };
+    
+  },
+  methods: {
+    
+  },
   created() {
-    const catId = this.$route.params.id;
+    let catId = this.$route.params.id;
+
+    // console.log("Outside if:" + catId)
+    // if(catId == '') {
+    //   this.firstTime = true;
+    //    catId = this.$store.state.user.id;
+    //    console.log("Inside if:" + catId)
+    // }
+    // this.firstTime = false;
     this.$store.commit("SET_CATID", catId);
   },
 };

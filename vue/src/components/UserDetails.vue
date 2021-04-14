@@ -1,6 +1,6 @@
 <template>
-  <div class="infosec" >
-      <h1 v-for="cat in catsArray" v-bind:key="cat.catId">{{ cat.name }}</h1>
+  <div class="infosec">
+    <h1 v-for="cat in catsArray" v-bind:key="cat.catId">{{ cat.name }}</h1>
     <div class="userDetail">
       <div class="userbio" v-for="cat in catsArray" v-bind:key="cat.catId">
         <img class="detailImage" v-bind:src="getImageURL(cat.imageName)" />
@@ -8,13 +8,16 @@
           <div><strong>Breed:</strong> {{ cat.breed }}</div>
           <div><strong>Color:</strong> {{ cat.color }}</div>
         </div>
-        <div class="occu"><strong>Occupation: </strong>{{ cat.occupation }}</div>
+        <div class="occu">
+          <strong>Occupation: </strong>{{ cat.occupation }}
+        </div>
       </div>
 
       <div class="lives" v-for="cat in catsArray" v-bind:key="cat.catId">
-        <img class="tomb" src="../Assets/tombstone.png" style="width:75%;"/>
+        <img class="tomb" src="../Assets/tombstone.png" style="width: 75%" />
         <div class="dLives">
-          <h2 class="hLR">Lives Remaining</h2>
+          <h2 class="hLR">Lives </h2>
+            <h2 class="hLR2">Remaining</h2>
           <h1 class="dLL">{{ cat.lives }}</h1>
         </div>
       </div>
@@ -31,32 +34,65 @@
           </div>
         </div>
 
-        <div class="placeFrequented" v-for="cat in catsArray" v-bind:key="cat.catId">
+<<<<<<< HEAD
+        <div
+          class="placeFrequented"
+          v-for="cat in catsArray"
+          v-bind:key="cat.catId"
+        >
           <h3>Last Seen</h3>
           <p>{{ cat.address }}</p>
         </div>
 
-        <div class="summaryDetail" v-for="cat in catsArray" v-bind:key="cat.catId">
+        <div
+          class="summaryDetail"
+          v-for="cat in catsArray"
+          v-bind:key="cat.catId"
+        >
           <h3>More About Me</h3>
           <p>{{ cat.summary }}</p>
+=======
+        <div class="placeFrequented" v-for="cat in catsArray" v-bind:key="cat.catId">
+          <h3 class="last">Last Seen</h3>
+          <p Class="last">{{ cat.address }}</p>
         </div>
-    </div>  
+
+        <div class="summaryDetail" v-for="cat in catsArray" v-bind:key="cat.catId">
+          <h3 class="more">More About Me</h3>
+          <p class="more">{{ cat.summary }}</p>
+>>>>>>> a18353353b705872b91a0705b12165f3660440d7
+        </div>
+      </div>
     </div>
-    <div class="alert alert-danger" role="alert" v-if="registrationErrors">{{ registrationErrorMsg }}</div>
-    <div class="deleteCats" v-for="cat in catsArray" v-bind:key="cat.catId" >   
-    <button type="submit" v-on:click="deleteCat" class="deleteButton" value="Delete Profile">Delete This Profile</button>
+    <div class="alert alert-danger" role="alert" v-if="registrationErrors">
+      {{ registrationErrorMsg }}
     </div>
-    
+    <div class="deleteCats" v-for="cat in catsArray" v-bind:key="cat.catId">
+      <button
+        type="submit"
+        v-on:click="deleteCat"
+        class="deleteButton"
+        value="Delete Profile"
+      >
+        Delete This Profile
+      </button>
+    </div>
+    <!-- <div v-if="isEmpty(this.$store.state.user)"> -->
+     <div v-if="this.$store.state.token != '' ">
+      <receive-message></receive-message>
+    </div>
   </div>
 </template>
 
 <script>
+import ReceiveMessage from "../components/ReceiveMessage.vue";
 
 import catService from "@/services/CatService.js";
 
 export default {
   name: "user-details",
   components: {
+    ReceiveMessage,
     
   },
   props: {
@@ -74,6 +110,9 @@ export default {
   },
 
   methods: {
+    isEmpty(obj) {
+      return Object.keys(obj).length === 0; 
+    },
     viewCatDetails() {
       this.$router.push("/catdetails");
     },
@@ -124,7 +163,6 @@ export default {
 </script>
 
 <style scoped>
-
 button[type="submit"] {
   background-color: #d6dae6;
   color: white;
@@ -133,34 +171,47 @@ button[type="submit"] {
   cursor: pointer;
   width: 7.313%;
   height: 2%;
-  position:absolute;
+  position: absolute;
   top: 2em;
   right: 5em;
 }
 button[type="submit"]:hover {
   background-color: #ff0000;
-  color: #163DA1;
+  color: #163da1;
 }
+<<<<<<< HEAD
 .desc {
+  display: flex;
+=======
+.desc, .mice {
   display:flex;
+>>>>>>> a18353353b705872b91a0705b12165f3660440d7
   flex-direction: row;
   justify-content: space-between;
   margin-left: 20px;
   margin-right: 20px;
 }
 
+<<<<<<< HEAD
 .rat {
   margin-bottom: 20px;
 }
 
 .mice {
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: auto;
 }
 
+.mice1,
+.mice2,
+.mice3,
+.mice4,
+.mice5 {
+=======
 .mice1, .mice2, .mice3, .mice4, .mice5 {
+>>>>>>> a18353353b705872b91a0705b12165f3660440d7
   display: block;
   width: 20% !important;
   height: 20%;
@@ -168,22 +219,24 @@ button[type="submit"]:hover {
 }
 
 .detailImage {
-  display: block;
-  width: 250px !important;
-  height: 250px;
-  margin-bottom: 15px;
-  border-radius: 20px;
+  max-width: 75%;
+  justify-content: center;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
   margin-left: auto;
   margin-right: auto;
 }
 .userbio {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 33.33%;
   border-style: outset;
+  box-shadow: 0px 0px 2px 2px #163da1;
+  border-radius: 10px;
   margin-left: 30px;
-
   justify-content: flex-start;
   text-align: center;
 }
@@ -192,7 +245,7 @@ button[type="submit"]:hover {
   flex-direction: row;
   justify-content: center;
   text-align: center;
-  width:33.33%;
+  width: 33.33%;
   position: relative;
   margin-left: 25px;
 }
@@ -202,31 +255,45 @@ button[type="submit"]:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  background: transparent;
 }
 
-.hLR, .dLL{
+<<<<<<< HEAD
+.hLR,
+.dLL {
   margin-bottom: 20px;
   margin-top: 20px;
 }
 
 .occu {
   margin-top: 10px;
+=======
+.hLR, .hLR2, .dLL, .occu, .rat, .last, .more{
+  margin-left: 10px;
+  margin-right: 10px;
+>>>>>>> a18353353b705872b91a0705b12165f3660440d7
   margin-bottom: 20px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
 }
 
 .rightside {
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: space-between;
   align-self: center;
-  width:33.33%;
+  width: 33.33%;
   margin-right: 30px;
   margin-left: 30px;
 }
 
+<<<<<<< HEAD
 .placeFrequented {
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: center;
   margin-bottom: 20px;
@@ -234,27 +301,34 @@ button[type="submit"]:hover {
 }
 
 .summaryDetail {
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: center;
   border-style: outset;
 }
 
 .rating {
+  display: flex;
+=======
+.placeFrequented, .summaryDetail, .rating {
   display:flex;
+>>>>>>> a18353353b705872b91a0705b12165f3660440d7
   flex-direction: column;
   text-align: center;
   margin-bottom: 20px;
   border-style: outset;
+  box-shadow: 0px 0px 2px 2px #163da1;
+  border-radius:10px;
 }
 
 .userDetail {
-  display:flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
 }
+
 .infosec {
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: center;
 }
