@@ -37,6 +37,9 @@ export default {
 </script>
 
 <style scoped>
+img {
+    border-radius: 50%;
+}
 h1 {
     text-align: center;
     margin: 10px 0 70px 0;
