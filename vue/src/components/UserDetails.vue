@@ -295,7 +295,6 @@ button[type="submit"]:hover {
   align-items: space-evenly;
   align-content: space-evenly;
   justify-content: space-evenly;
-  margin-top: 50px;
 }
 .receive, .send {
   display: flex;
