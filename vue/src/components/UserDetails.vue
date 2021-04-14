@@ -34,7 +34,6 @@
           </div>
         </div>
 
-<<<<<<< HEAD
         <div
           class="placeFrequented"
           v-for="cat in catsArray"
@@ -51,7 +50,6 @@
         >
           <h3>More About Me</h3>
           <p>{{ cat.summary }}</p>
-=======
         <div class="placeFrequented" v-for="cat in catsArray" v-bind:key="cat.catId">
           <h3 class="last">Last Seen</h3>
           <p Class="last">{{ cat.address }}</p>
@@ -60,7 +58,6 @@
         <div class="summaryDetail" v-for="cat in catsArray" v-bind:key="cat.catId">
           <h3 class="more">More About Me</h3>
           <p class="more">{{ cat.summary }}</p>
->>>>>>> a18353353b705872b91a0705b12165f3660440d7
         </div>
       </div>
     </div>
@@ -179,20 +176,16 @@ button[type="submit"]:hover {
   background-color: #ff0000;
   color: #163da1;
 }
-<<<<<<< HEAD
 .desc {
   display: flex;
-=======
 .desc, .mice {
   display:flex;
->>>>>>> a18353353b705872b91a0705b12165f3660440d7
   flex-direction: row;
   justify-content: space-between;
   margin-left: 20px;
   margin-right: 20px;
 }
 
-<<<<<<< HEAD
 .rat {
   margin-bottom: 20px;
 }
@@ -209,9 +202,7 @@ button[type="submit"]:hover {
 .mice3,
 .mice4,
 .mice5 {
-=======
 .mice1, .mice2, .mice3, .mice4, .mice5 {
->>>>>>> a18353353b705872b91a0705b12165f3660440d7
   display: block;
   width: 20% !important;
   height: 20%;
@@ -260,7 +251,6 @@ button[type="submit"]:hover {
   background: transparent;
 }
 
-<<<<<<< HEAD
 .hLR,
 .dLL {
   margin-bottom: 20px;
@@ -269,11 +259,9 @@ button[type="submit"]:hover {
 
 .occu {
   margin-top: 10px;
-=======
 .hLR, .hLR2, .dLL, .occu, .rat, .last, .more{
   margin-left: 10px;
   margin-right: 10px;
->>>>>>> a18353353b705872b91a0705b12165f3660440d7
   margin-bottom: 20px;
   background: transparent;
   display: flex;
@@ -291,7 +279,6 @@ button[type="submit"]:hover {
   margin-left: 30px;
 }
 
-<<<<<<< HEAD
 .placeFrequented {
   display: flex;
   flex-direction: column;
@@ -309,10 +296,8 @@ button[type="submit"]:hover {
 
 .rating {
   display: flex;
-=======
 .placeFrequented, .summaryDetail, .rating {
   display:flex;
->>>>>>> a18353353b705872b91a0705b12165f3660440d7
   flex-direction: column;
   text-align: center;
   margin-bottom: 20px;
