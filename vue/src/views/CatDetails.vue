@@ -1,20 +1,14 @@
 <template>
   <div class="catdetails">
     <div>
-    <router-link :to="{ name: 'addcat' }">Edit</router-link>
       <user-details></user-details>
-    </div>
-    <div>
-     
-      <send-message></send-message>
-      
     </div>
   </div>
 </template>
 
 <script>
 
-import SendMessage from "../components/SendMessage.vue";
+
 import UserDetails from "../components/UserDetails.vue";
 
 export default {
@@ -24,7 +18,6 @@ export default {
   name: "catdetails",
   components: {
     UserDetails,
-    SendMessage,
     
    
   },

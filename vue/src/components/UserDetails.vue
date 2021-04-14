@@ -1,7 +1,9 @@
 <template>
   <div class="infosec">
     <h1 v-for="cat in catsArray" v-bind:key="cat.catId">{{ cat.name }}</h1>
-    <div class="userDetail">
+    <div class="userDetail"> <!-- START OF DETAILS -->
+
+      <!-- USER BIO SECTION WITH PICTURE AND INFORMATION -->
       <div class="userbio" v-for="cat in catsArray" v-bind:key="cat.catId">
         <img class="detailImage" v-bind:src="getImageURL(cat.imageName)" />
         <div class="desc">
@@ -13,6 +15,7 @@
         </div>
       </div>
 
+      <!-- LIVES REMAINING SECTION WITH TOMBSTONE -->
       <div class="lives" v-for="cat in catsArray" v-bind:key="cat.catId">
         <img class="tomb" src="../Assets/tombstone.png" style="width: 75%" />
         <div class="dLives">
@@ -22,6 +25,7 @@
         </div>
       </div>
 
+      <!-- RIGHT SIDE WITH RATING, LAST SEEN, AND ABOUT ME -->
       <div class="rightside">
         <div class="rating">
           <h3 class="rat">RATing</h3>
@@ -43,30 +47,45 @@
           <h3 class="more">More About Me</h3>
           <p class="more">{{ cat.summary }}</p>
         </div>
-      </div>
-    
+      </div> 
+    </div><!-- END OF DETAILS -->
+
+    <!-- DELETE BUTTON -->
     <div class="alert alert-danger" role="alert" v-if="registrationErrors">
       {{ registrationErrorMsg }}
     </div>
     <div class="deleteCats" v-for="cat in catsArray" v-bind:key="cat.catId">
       <button type="submit" v-on:click="deleteCat" class="deleteButton" value="Delete Profile">Delete This Profile</button>
     </div>
-      <div v-if="this.$store.state.token != '' ">
-      <receive-message></receive-message>
+
+    <div class="msgCont">
+      <!-- SEND MESSAGE -->
+      <div class="send">
+        <send-message></send-message>
+      </div>
+      <!-- RECEIVE MESSAGE -->
+      <div class="receive" v-if="this.$store.state.token != '' ">
+        <receive-message></receive-message>
       </div>
     </div>
+
+    <div>
+      <router-link :to="{ name: 'addcat' }">Edit</router-link>
+    </div>
+    
   </div>
 </template>
 
 <script>
 import ReceiveMessage from "../components/ReceiveMessage.vue";
-
+import SendMessage from "../components/SendMessage.vue";
 import catService from "@/services/CatService.js";
 
 export default {
   name: "user-details",
   components: {
     ReceiveMessage,
+    SendMessage,
     
   },
   props: {
@@ -137,6 +156,14 @@ export default {
 </script>
 
 <style scoped>
+  /* PAGE STYLING */
+.infosec {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+  /* DELETE BUTTON */
 button[type="submit"] {
   background-color: #d6dae6;
   color: white;
@@ -154,6 +181,7 @@ button[type="submit"]:hover {
   color: #163da1;
 }
 
+  /* DETAILS SECTION */
 .desc, .mice {
   display:flex;
   flex-direction: row;
@@ -161,26 +189,21 @@ button[type="submit"]:hover {
   margin-left: 20px;
   margin-right: 20px;
 }
-
 .rat {
   margin-bottom: 20px;
 }
-
 .mice {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: auto;
 }
-
-
 .mice1, .mice2, .mice3, .mice4, .mice5 {
   display: block;
   width: 20% !important;
   height: 20%;
   margin-bottom: 15px;
 }
-
 .detailImage {
   max-width: 75%;
   justify-content: center;
@@ -212,7 +235,6 @@ button[type="submit"]:hover {
   position: relative;
   margin-left: 25px;
 }
-
 .dLives {
   position: absolute;
   top: 50%;
@@ -222,8 +244,6 @@ button[type="submit"]:hover {
   height: auto;
   background: transparent;
 }
-
-
 .hLR, .hLR2, .dLL, .occu, .rat, .last, .more{
   margin-left: 10px;
   margin-right: 10px;
@@ -232,7 +252,6 @@ button[type="submit"]:hover {
   display: flex;
   flex-direction: column;
 }
-
 .rightside {
   display: flex;
   flex-direction: column;
@@ -243,7 +262,6 @@ button[type="submit"]:hover {
   margin-right: 30px;
   margin-left: 30px;
 }
-
 .placeFrequented {
   display: flex;
   flex-direction: column;
@@ -251,15 +269,12 @@ button[type="submit"]:hover {
   margin-bottom: 20px;
   border-style: outset;
 }
-
 .summaryDetail {
   display: flex;
   flex-direction: column;
   text-align: center;
   border-style: outset;
 }
-
-
 .placeFrequented, .summaryDetail, .rating {
   display:flex;
   flex-direction: column;
@@ -269,16 +284,27 @@ button[type="submit"]:hover {
   box-shadow: 0px 0px 2px 2px #163da1;
   border-radius:10px;
 }
-
 .userDetail {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-
-.infosec {
+.msgCont {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-items: space-evenly;
+  align-content: space-evenly;
+  justify-content: space-evenly;
+  margin-top: 50px;
 }
+.receive, .send {
+  display: flex;
+  flex-direction: column;
+  align-self: space-evenly;
+  justify-content: space-evenly;
+  background: transparent;
+  align-content: space-evenly;
+  
+}
+
 </style>
