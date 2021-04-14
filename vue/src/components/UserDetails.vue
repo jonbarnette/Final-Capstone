@@ -169,8 +169,7 @@ button[type="submit"]:hover {
   background-color: #ff0000;
   color: #163da1;
 }
-.desc {
-  display: flex;
+
 .desc, .mice {
   display:flex;
   flex-direction: row;
@@ -190,11 +189,7 @@ button[type="submit"]:hover {
   margin: auto;
 }
 
-.mice1,
-.mice2,
-.mice3,
-.mice4,
-.mice5 {
+
 .mice1, .mice2, .mice3, .mice4, .mice5 {
   display: block;
   width: 20% !important;
@@ -244,14 +239,7 @@ button[type="submit"]:hover {
   background: transparent;
 }
 
-.hLR,
-.dLL {
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
 
-.occu {
-  margin-top: 10px;
 .hLR, .hLR2, .dLL, .occu, .rat, .last, .more{
   margin-left: 10px;
   margin-right: 10px;
@@ -287,8 +275,7 @@ button[type="submit"]:hover {
   border-style: outset;
 }
 
-.rating {
-  display: flex;
+
 .placeFrequented, .summaryDetail, .rating {
   display:flex;
   flex-direction: column;
