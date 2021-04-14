@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="infosec">
     <h1 v-for="cat in catsArray" v-bind:key="cat.catId">{{ cat.name }}</h1>
     <div class="userDetail"> <!-- START OF DETAILS -->
@@ -50,14 +51,6 @@
       </div> 
     </div><!-- END OF DETAILS -->
 
-    <!-- DELETE BUTTON -->
-    <div class="alert alert-danger" role="alert" v-if="registrationErrors">
-      {{ registrationErrorMsg }}
-    </div>
-    <div class="deleteCats" v-for="cat in catsArray" v-bind:key="cat.catId">
-      <button type="submit" v-on:click="deleteCat" class="deleteButton" value="Delete Profile">Delete This Profile</button>
-    </div>
-
     <div class="msgCont">
       <!-- SEND MESSAGE -->
       <div class="send">
@@ -69,11 +62,20 @@
       </div>
     </div>
 
+    <div class="dNe">
     <div>
       <router-link :to="{ name: 'addcat' }">Edit</router-link>
     </div>
-    
+    <!-- DELETE BUTTON -->
+    <div role="alert" v-if="registrationErrors">
+      {{ registrationErrorMsg }}
+    </div>
+    <div v-for="cat in catsArray" v-bind:key="cat.catId">
+      <button type="submit" v-on:click="deleteCat" class="deleteButton" value="Delete Profile">Delete This Profile</button>
+    </div>
+    </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -172,7 +174,6 @@ button[type="submit"] {
   cursor: pointer;
   width: 7.313%;
   height: 2%;
-  position: absolute;
   top: 2em;
   right: 5em;
 }
@@ -295,6 +296,8 @@ button[type="submit"]:hover {
   align-items: space-evenly;
   align-content: space-evenly;
   justify-content: space-evenly;
+  background: transparent;
+  margin: auto;
 }
 .receive, .send {
   display: flex;
@@ -303,6 +306,7 @@ button[type="submit"]:hover {
   justify-content: space-evenly;
   background: transparent;
   align-content: space-evenly;
+  background: transparent;
   
 }
 
