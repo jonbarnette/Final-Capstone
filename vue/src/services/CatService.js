@@ -30,7 +30,8 @@ export default {
         return axios.post('/message', cat)
     },
     getCatMsg(catId) {
-        console.log('msg' + catId)
+        
+        console.log('msg-' + catId)
         return axios.get('/message/' + catId)
     },
 

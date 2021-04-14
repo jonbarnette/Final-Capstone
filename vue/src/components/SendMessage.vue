@@ -67,7 +67,7 @@ export default {
   },
   created() {
     const catId = this.$store.state.catId;
-
+  
     catService
       .getCatDetails(catId)
       .then((response) => {
