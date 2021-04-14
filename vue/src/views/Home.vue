@@ -39,9 +39,11 @@ export default {
 .frontpageCats {
   display: flex;
   flex-direction: row;
-
   position: relative;
   background-color: transparent;
+  
+  
+ 
 }
 
 .cats {
@@ -53,6 +55,8 @@ export default {
   transition: transform 1.2s ease 0s;
   border: 1.5px solid black;
   object-fit: cover;
+  
+   
 }
 
 .cats:hover {
@@ -84,5 +88,7 @@ export default {
   font-weight: bold;
   /* transform: translate(-50% ,-50%); */
   overflow: auto;
+ 
 }
+
 </style>
