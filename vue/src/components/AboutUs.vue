@@ -11,16 +11,16 @@
 <div class="theteam">
   
   <div class="joncat">the jon this is just here to see how far it will go
-      <img src="../Assets/CatUsers/1017.jpg" />
+      <img src="../Assets/CatUsers/3001.jpg" />
   </div>
   <div class="charliecat">the charlie this is just here to see how far it will go
-      <img src="../Assets/CatUsers/1017.jpg" />
+      <img src="../Assets/CatUsers/3002.jpg" />
   </div>
   <div class="joecat">the joe this is just here to see how far it will go
-      <img src="../Assets/CatUsers/1017.jpg" />
+      <img src="../Assets/CatUsers/3003.jpg" />
   </div>
   <div class="bugeater">the bugeater this is just here to see how far it will go
-      <img src="../Assets/CatUsers/1017.jpg" />
+      <img src="../Assets/CatUsers/3000.jpg" />
   </div>
   
 </div>
@@ -49,16 +49,16 @@ h1 {
     margin-right: 50px;
     margin-left: 50px;
 }
-.joncat {
+.joncat, .joecat {
     display: flex;
     flex-direction: column;
-    grid-area: joncat;
+    grid-area: joncat, joecat;
     border: 2px solid black;
     justify-content: center;
     text-align: center;
     margin-right: 10px;
 }
-.charliecat {
+/* .charliecat {
     display: flex;
     flex-direction: column;
     grid-area: charliecat;
@@ -66,8 +66,8 @@ h1 {
     justify-content: center;
     text-align: center;
     margin-left: 10px;
-}
-.joecat {
+} */
+/* .joecat {
     display: flex;
     flex-direction: column;
     grid-area: joecat;
@@ -75,11 +75,11 @@ h1 {
     justify-content: center;
     text-align: center;
     margin-right: 10px;
-}
-.bugeater {
+} */
+.bugeater, .charliecat {
     display: flex;
     flex-direction: column;
-    grid-area: bugeater;
+    grid-area: bugeater, charliecat;
     border: 2px solid black;
     justify-content: center;
     text-align: center;
