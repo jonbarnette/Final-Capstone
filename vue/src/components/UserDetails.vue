@@ -181,7 +181,11 @@ button[type="submit"]:hover {
   background-color: #ff0000;
   color: #163da1;
 }
-
+/* NAME */
+h1 {
+  font-family: "Ledger", serif;
+  font-size: 3rem;
+}
   /* DETAILS SECTION */
 .desc, .mice {
   display:flex;
@@ -189,6 +193,7 @@ button[type="submit"]:hover {
   justify-content: space-between;
   margin-left: 20px;
   margin-right: 20px;
+  font-family: "Ledger", serif;
 }
 .rat {
   margin-bottom: 20px;
@@ -197,7 +202,7 @@ button[type="submit"]:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: auto;
+  margin: auto 5px auto 5px;
 }
 .mice1, .mice2, .mice3, .mice4, .mice5 {
   display: block;
@@ -252,6 +257,7 @@ button[type="submit"]:hover {
   background: transparent;
   display: flex;
   flex-direction: column;
+  font-family: "Ledger", serif;
 }
 .rightside {
   display: flex;
@@ -284,6 +290,7 @@ button[type="submit"]:hover {
   border-style: outset;
   box-shadow: 0px 0px 2px 2px #163da1;
   border-radius:10px;
+  font-family: "Ledger", serif;
 }
 .userDetail {
   display: flex;
