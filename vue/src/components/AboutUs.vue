@@ -4,19 +4,19 @@
 
     <div class="theteam">
       <div class="joncat">
-        the jon this is just here to see how far it will go the jon this is just here to see how far it will go the jon this is just here to see how far it will go
+        The joncat, looks menacing and does not pay attention at all times. Needs constant naps.
         <img src="../Assets/CatUsers/3001.jpg" />
       </div>
       <div class="charliecat">
-        the charlie this is just here to see how far it will go the jon this is just here to see how far it will go the jon this is just here to see how far it will go
+        Just like the image, this cat is calm, cool and collected. Nothing could disturb this cat's zen.
         <img src="../Assets/CatUsers/3002.jpg" />
       </div>
       <div class="joecat">
-        the joe this is just here to see how far it will go
+        Stuff should go here explaining what this cat does, but nothing came to mind.
         <img src="../Assets/CatUsers/3003.jpg" />
       </div>
       <div class="bugeater">
-        the bugeater this is just here to see how far it will go
+        The resident bug eater. Enjoys searching for bugs in the code making it so there is always clean code.
         <img src="../Assets/CatUsers/3000.jpg" />
       </div>
       <div class="missionstatement">
@@ -43,12 +43,13 @@ export default {
 <style scoped>
 img {
   border-radius: 50%;
+  border: 5px solid black;
 }
 h1 {
   font-family: "Work Sans",sans-serif;
   font-size: 5rem;
   text-align: center;
-  margin: 10px 0 70px 0;
+  margin: 50px 0 70px 0;
 }
 .theteam {
   /* box-sizing: border-box; */
@@ -70,6 +71,7 @@ h1 {
   margin-right: 10px;
   margin-bottom: 30px;
   font-size: 2rem;
+  font-family: "Ledger", serif;
 }
 .charliecat {
   display: flex;
@@ -81,6 +83,7 @@ h1 {
   margin-left: 10px;
   margin-bottom: 30px;
   font-size: 2rem;
+  font-family: "Ledger", serif;
 }
 .joecat {
   display: flex;
@@ -92,6 +95,7 @@ h1 {
   margin-right: 10px;
   margin-top: 30px;
   font-size: 2rem;
+  font-family: "Ledger", serif;
 }
 .bugeater {
   display: flex;
@@ -103,10 +107,11 @@ h1 {
   margin-left: 10px;
   margin-top: 30px;
   font-size: 2rem;
+  font-family: "Ledger", serif;
 }
 .missionstatement {
   font-family: "Ledger", serif;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   text-align: center;
   padding-left: 100px;
   padding-right: 100px;
