@@ -141,11 +141,12 @@ button[type="submit"]:hover {
 .msgcontainer{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .sendMsg {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   border-radius: 5px;
   color: #163da1;
   padding: 20px;
@@ -153,10 +154,6 @@ button[type="submit"]:hover {
   width: 25em;
   margin: 0 auto;
   background: transparent;
-  text-align: center;
-
-  justify-content: space-evenly;
-  align-content: center;
   align-items: center;
 }
 
@@ -165,7 +162,6 @@ button[type="submit"]:hover {
   border: 3px solid #163da1;
   background: transparent;
   outline: 0;
-  text-align: center;
 }
 .ninjaButton:active {
   transform: scale(0.98);
