@@ -14,7 +14,8 @@
       <div class="lives" v-for="cat in catsArray" v-bind:key="cat.catId">
         <img class="tomb" src="../Assets/tombstone.png" style="width:75%;"/>
         <div class="dLives">
-          <h2 class="hLR">Lives Remaining</h2>
+          <h2 class="hLR">Lives </h2>
+            <h2 class="hLR2">Remaining</h2>
           <h1 class="dLL">{{ cat.lives }}</h1>
         </div>
       </div>
@@ -32,13 +33,13 @@
         </div>
 
         <div class="placeFrequented" v-for="cat in catsArray" v-bind:key="cat.catId">
-          <h3>Last Seen</h3>
-          <p>{{ cat.address }}</p>
+          <h3 class="last">Last Seen</h3>
+          <p Class="last">{{ cat.address }}</p>
         </div>
 
         <div class="summaryDetail" v-for="cat in catsArray" v-bind:key="cat.catId">
-          <h3>More About Me</h3>
-          <p>{{ cat.summary }}</p>
+          <h3 class="more">More About Me</h3>
+          <p class="more">{{ cat.summary }}</p>
         </div>
     </div>  
     </div>
@@ -141,23 +142,12 @@ button[type="submit"]:hover {
   background-color: #ff0000;
   color: #163DA1;
 }
-.desc {
+.desc, .mice {
   display:flex;
   flex-direction: row;
   justify-content: space-between;
   margin-left: 20px;
   margin-right: 20px;
-}
-
-.rat {
-  margin-bottom: 20px;
-}
-
-.mice {
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: auto;
 }
 
 .mice1, .mice2, .mice3, .mice4, .mice5 {
@@ -168,11 +158,12 @@ button[type="submit"]:hover {
 }
 
 .detailImage {
-  display: block;
-  width: 250px !important;
-  height: 250px;
-  margin-bottom: 15px;
-  border-radius: 20px;
+  max-width: 75%;
+  justify-content: center;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -182,8 +173,9 @@ button[type="submit"]:hover {
   justify-content: space-between;
   width: 33.33%;
   border-style: outset;
+  box-shadow: 0px 0px 2px 2px #163da1;
+  border-radius: 10px;
   margin-left: 30px;
-
   justify-content: flex-start;
   text-align: center;
 }
@@ -202,16 +194,18 @@ button[type="submit"]:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  background: transparent;
 }
 
-.hLR, .dLL{
+.hLR, .hLR2, .dLL, .occu, .rat, .last, .more{
+  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-.occu {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
 }
 
 .rightside {
@@ -225,27 +219,14 @@ button[type="submit"]:hover {
   margin-left: 30px;
 }
 
-.placeFrequented {
+.placeFrequented, .summaryDetail, .rating {
   display:flex;
   flex-direction: column;
   text-align: center;
   margin-bottom: 20px;
   border-style: outset;
-}
-
-.summaryDetail {
-  display:flex;
-  flex-direction: column;
-  text-align: center;
-  border-style: outset;
-}
-
-.rating {
-  display:flex;
-  flex-direction: column;
-  text-align: center;
-  margin-bottom: 20px;
-  border-style: outset;
+  box-shadow: 0px 0px 2px 2px #163da1;
+  border-radius:10px;
 }
 
 .userDetail {
@@ -253,6 +234,7 @@ button[type="submit"]:hover {
   flex-direction: row;
   align-items: center;
 }
+
 .infosec {
   display:flex;
   flex-direction: column;
