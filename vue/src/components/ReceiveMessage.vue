@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="messageBox">
   <h2 class="inbox">Inbox</h2>
     <div id="rcvMsg" v-for="msg in messageArray" v-bind:key="msg.catId">
       <div class="msg-sender"><img src="../Assets/CatUsers/1011.jpg" alt="Avatar" class="right">{{msg.sender}}: </div>
@@ -60,33 +60,48 @@ export default {
   font-size: 1.5em;
   padding: 10px;
   margin: 10px 0;
-  border: 2px solid #575353;
+    
+  /* border: 2px solid #575353;
   background-color: #c0b9b9;
-  border-radius: 15px;
-  padding: 10px;
-  margin: 10px 0;
+  border-radius: 15px; */
+  
+  font-family: 'Ledger', serif;
 }
 .the-msg {
   grid-area: the-msg;
   /* padding-right: 15px;
   margin-left: 10px; */
   font-size: 1.5em;
-  border: 2px solid #575353;
+  
+  /* border: 2px solid #575353;
   background-color: #f1f1f1;
-  border-radius: 15px;
+  border-radius: 15px; */
   padding: 10px;
   margin: 10px 0;
   box-shadow: 5px 5px #575353;
 }
 #rcvMsg {
-  display: grid;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  
+  padding-left: 500px;
   grid-template-areas: 'msg-sender the-msg';
-  border: 2px solid transparent;
+  /* border: 2px solid transparent; */
   width: fit-content;
+    /* background-color: #c0b9b9; */
+  border-radius: 15px; 
+  font-family: 'Ledger', serif;
+  
 }
 .inbox {
-  margin-left: 45%;
+  display:flex;
+  flex-direction: column;
+  text-align: center;
   font-size: 2.5em;
+  font-family: "Work Sans",sans-serif;
+ 
 }
 .msg-sender img {
     float: left;
@@ -96,4 +111,11 @@ export default {
   border-radius: 50%;
 
 }
+
+/* .messageBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+} */
 </style>

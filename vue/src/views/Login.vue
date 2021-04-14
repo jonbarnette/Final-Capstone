@@ -60,7 +60,7 @@ export default {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
-            this.$router.push("/catdetails");
+            this.$router.push("/catdetails/:id");
           }
         })
         .catch(error => {
@@ -91,11 +91,18 @@ button[type="submit"] {
   cursor: pointer;
   width: 8em;
   align-items: center;
+  outline: 0;
   
 }
 button[type="submit"]:hover {
   background-color: #f6faf6;
   color: #163da1;
+}
+button[type="submit"]:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
 }
 .form-signin {
   display: flex;

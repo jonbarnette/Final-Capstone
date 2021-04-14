@@ -1,14 +1,22 @@
 <template>
- 
-<div class="msgcontainer">
-    <button class="ninjaButton" v-on:click="catNinja = !catNinja"><h3>Send an instant meow-ssage</h3></button>
+  <div class="msgcontainer">
+    <button class="ninjaButton" v-on:click="catNinja = !catNinja">
+      <h3>Send an instant meow-ssage</h3>
+    </button>
 
     <form class="sendMsg" @submit.prevent="sendMsg">
       <label v-show="catNinja" for="sender">Sender Name</label>
-      <input v-show="catNinja" type="text" id="sender" name="sender" v-model="cat.sender" placeholder="Sender name.." />
+      <input
+        v-show="catNinja"
+        type="text"
+        id="sender"
+        name="sender"
+        v-model="cat.sender"
+        placeholder="Sender name.."
+      />
       <label v-show="catNinja" for="message">Message</label>
       <textarea
-      v-show="catNinja"
+        v-show="catNinja"
         id="message"
         name="message"
         v-model="cat.message"
@@ -17,12 +25,17 @@
         required
       ></textarea>
       <div>
-        <button v-show="catNinja" type="submit" class="sendMsgButton" value="Send Message">Send Message</button>
+        <button
+          v-show="catNinja"
+          type="submit"
+          class="sendMsgButton"
+          value="Send Message"
+        >
+          Send Message
+        </button>
       </div>
     </form>
-    
-    
-</div>
+  </div>
 </template>
 
 
@@ -31,30 +44,28 @@ import catService from "../services/CatService";
 
 export default {
   name: "send-message",
-  props:{},
+  props: {},
 
   data() {
-    
     return {
       catNinja: false,
-        cat: {
-            catId: '',
-            sender:'',
-            message:'',
-        },
+      cat: {
+        catId: "",
+        sender: "",
+        message: "",
+      },
     };
   },
   methods: {
-    
     sendMsg() {
       this.cat.catId = this.$store.state.catId;
-     
+
       catService
         .msgCat(this.cat)
         .then((response) => {
           console.log(response.status);
           if (response.status == "201") {
-              this.$router.push("/cats")
+            this.$router.push("/cats");
 
             //success
           }
@@ -67,7 +78,7 @@ export default {
   },
   created() {
     const catId = this.$store.state.catId;
-  
+
     catService
       .getCatDetails(catId)
       .then((response) => {
@@ -81,8 +92,6 @@ export default {
       });
   },
 };
-
-
 </script>
 
 <style scoped>
@@ -93,7 +102,9 @@ export default {
   justify-content: center;
 } */
 
-input[type="text"], select, textarea {
+input[type="text"],
+select,
+textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -115,39 +126,42 @@ button[type="submit"] {
   border-radius: 2em;
   cursor: pointer;
   width: 10em;
+  outline: 0;
+}
+button[type="submit"]:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
 }
 button[type="submit"]:hover {
   background-color: #f6faf6;
-  color: #163DA1;
+  color: #163da1;
 }
-.msgcontainer, form{
+.msgcontainer,
+form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  color: #163DA1;
+  color: #163da1;
   padding: 20px;
   font-family: monospace;
   width: 25em;
   margin: 0 auto;
-  
 }
 
 .ninjaButton {
-
   border-radius: 3em;
-  border: 3px solid  #163DA1 ; 
+  border: 3px solid #163da1;
   background: transparent;
   outline: 0;
- 
 }
 .ninjaButton:active {
-            transform: scale(0.98);
-            /* Scaling button to 0.98 to its original size */
-            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-            /* Lowering the shadow */
-            
-        }
-
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
 </style>
