@@ -7,9 +7,8 @@
       <p id="work1">Hi I'm looking for work!</p>
       <div class="cats">
         <img src="../Assets/CatUsers/AlleyCat.jpg" />
-        
+        <p id="work2">Do you have a position open?</p>
       </div>
-      <p id="work2">Do you have a position open?</p>
     </div>
     <video autoplay muted loop id="myVideo">
       <source src="../Assets/computer_cat.mp4" type="video/mp4" />
@@ -48,7 +47,7 @@ export default {
 }
 
 .cats {
-  flex: 0 1 30%;
+  /* flex: 0 1 30%; */
   align-items: space-around;
   justify-content: center;
   align-content: center;
@@ -76,6 +75,7 @@ transition-delay: .1s;
   font-size: 24px;
   font-weight: bold;
   transform: translate(-50% ,-50%);
+  overflow: auto;
   
   
 }
@@ -89,9 +89,10 @@ transition-delay: .1s;
   font-size: 24px;
   font-weight: bold;
   transform: translate(-50% ,-50%);
-  
+  overflow:auto;
   
 }
+
 
 
 </style>
