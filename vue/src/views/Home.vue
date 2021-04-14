@@ -39,6 +39,7 @@ export default {
 
 .frontpageCats {
   display: flex;
+  flex-direction: row;
   
   position: relative;
   background-color: transparent;
@@ -53,10 +54,10 @@ export default {
   justify-content: center;
   align-content: center;
   margin: 10px;
-  box-shadow: 0px 8px 8px 0px grey;
+  
   transition: transform 1.2s ease 0s;
   border: 5px solid black;
-  
+  object-fit: cover;
 }
 
 

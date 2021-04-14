@@ -2,7 +2,7 @@
   <div id="userlist">
     <div id="searchUsers">
         <label for="occupation">Search by occupation:</label>
-        <input type="text" name="occupation" v-model="occupationFilter" />     
+        <input type="text" class="occupationsearch" name="occupation" v-model="occupationFilter" />     
     </div>
     <div class="body">
       <div class="card" v-for="cat in filteredCats" v-bind:key="cat.name" >
@@ -11,11 +11,12 @@
         </div>
         <div class="info">
         <div class="container">
-           <router-link style="text-decoration: none;" v-bind:to="{ name: 'catdetails', params: {id: cat.catId }}">{{cat.name}}</router-link>
+           <router-link style="text-decoration: none;" v-bind:to="{ name: 'catdetails', params: {id: cat.catId }}">{{cat.name}}</router-link> &nbsp; / &nbsp;
+          {{cat.occupation}}
           </div>
-        <div class="container">
+        <!-- <div class="container">
           <h5>{{cat.occupation}}</h5>
-          </div>
+          </div> -->
         <div class="container">"{{cat.tagline}}"</div>
 
         </div>
@@ -112,8 +113,9 @@ data() {
   text-align: center;
   align-items: center;
   justify-content: center;
-  margin: 0px;
-  font-family:"Work Sans",sans-serif;
+  margin: 5px 0 7px 0;
+  font-family: "Ledger", serif;
+  font-size: 15px;
 } 
 
 h3, h5 {
@@ -137,6 +139,12 @@ input[type=text] {
 
 label {
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 35px;
+}
+#userlist > #searchUsers > .occupationsearch {
+  height: 2rem;
+  width: 25rem;
+  font-size: 25px;
 }
 
 
