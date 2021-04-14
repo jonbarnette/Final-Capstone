@@ -65,18 +65,11 @@
       {{ registrationErrorMsg }}
     </div>
     <div class="deleteCats" v-for="cat in catsArray" v-bind:key="cat.catId">
-      <button
-        type="submit"
-        v-on:click="deleteCat"
-        class="deleteButton"
-        value="Delete Profile"
-      >
-        Delete This Profile
-      </button>
+      <button type="submit" v-on:click="deleteCat" class="deleteButton" value="Delete Profile">Delete This Profile</button>
     </div>
-    <!-- <div v-if="isEmpty(this.$store.state.user)"> -->
-     <div v-if="this.$store.state.token != '' ">
+      <div v-if="this.$store.state.token != '' ">
       <receive-message></receive-message>
+      </div>
     </div>
   </div>
 </template>
