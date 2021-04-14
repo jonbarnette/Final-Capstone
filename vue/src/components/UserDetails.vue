@@ -1,6 +1,6 @@
 <template>
-  <div class="infosec" >
-      <h1 v-for="cat in catsArray" v-bind:key="cat.catId">{{ cat.name }}</h1>
+  <div class="infosec">
+    <h1 v-for="cat in catsArray" v-bind:key="cat.catId">{{ cat.name }}</h1>
     <div class="userDetail">
       <div class="userbio" v-for="cat in catsArray" v-bind:key="cat.catId">
         <img class="detailImage" v-bind:src="getImageURL(cat.imageName)" />
@@ -8,11 +8,13 @@
           <div><strong>Breed:</strong> {{ cat.breed }}</div>
           <div><strong>Color:</strong> {{ cat.color }}</div>
         </div>
-        <div class="occu"><strong>Occupation: </strong>{{ cat.occupation }}</div>
+        <div class="occu">
+          <strong>Occupation: </strong>{{ cat.occupation }}
+        </div>
       </div>
 
       <div class="lives" v-for="cat in catsArray" v-bind:key="cat.catId">
-        <img class="tomb" src="../Assets/tombstone.png" style="width:75%;"/>
+        <img class="tomb" src="../Assets/tombstone.png" style="width: 75%" />
         <div class="dLives">
           <h2 class="hLR">Lives Remaining</h2>
           <h1 class="dLL">{{ cat.lives }}</h1>
@@ -31,32 +33,54 @@
           </div>
         </div>
 
-        <div class="placeFrequented" v-for="cat in catsArray" v-bind:key="cat.catId">
+        <div
+          class="placeFrequented"
+          v-for="cat in catsArray"
+          v-bind:key="cat.catId"
+        >
           <h3>Last Seen</h3>
           <p>{{ cat.address }}</p>
         </div>
 
-        <div class="summaryDetail" v-for="cat in catsArray" v-bind:key="cat.catId">
+        <div
+          class="summaryDetail"
+          v-for="cat in catsArray"
+          v-bind:key="cat.catId"
+        >
           <h3>More About Me</h3>
           <p>{{ cat.summary }}</p>
         </div>
-    </div>  
+      </div>
     </div>
-    <div class="alert alert-danger" role="alert" v-if="registrationErrors">{{ registrationErrorMsg }}</div>
-    <div class="deleteCats" v-for="cat in catsArray" v-bind:key="cat.catId" >   
-    <button type="submit" v-on:click="deleteCat" class="deleteButton" value="Delete Profile">Delete This Profile</button>
+    <div class="alert alert-danger" role="alert" v-if="registrationErrors">
+      {{ registrationErrorMsg }}
     </div>
-    
+    <div class="deleteCats" v-for="cat in catsArray" v-bind:key="cat.catId">
+      <button
+        type="submit"
+        v-on:click="deleteCat"
+        class="deleteButton"
+        value="Delete Profile"
+      >
+        Delete This Profile
+      </button>
+    </div>
+    <!-- <div v-if="isEmpty(this.$store.state.user)"> -->
+     <div v-if="this.$store.state.token != '' ">
+      <receive-message></receive-message>
+    </div>
   </div>
 </template>
 
 <script>
+import ReceiveMessage from "../components/ReceiveMessage.vue";
 
 import catService from "@/services/CatService.js";
 
 export default {
   name: "user-details",
   components: {
+    ReceiveMessage,
     
   },
   props: {
@@ -74,6 +98,9 @@ export default {
   },
 
   methods: {
+    isEmpty(obj) {
+      return Object.keys(obj).length === 0; 
+    },
     viewCatDetails() {
       this.$router.push("/catdetails");
     },
@@ -124,7 +151,6 @@ export default {
 </script>
 
 <style scoped>
-
 button[type="submit"] {
   background-color: #d6dae6;
   color: white;
@@ -133,16 +159,16 @@ button[type="submit"] {
   cursor: pointer;
   width: 7.313%;
   height: 2%;
-  position:absolute;
+  position: absolute;
   top: 2em;
   right: 5em;
 }
 button[type="submit"]:hover {
   background-color: #ff0000;
-  color: #163DA1;
+  color: #163da1;
 }
 .desc {
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-left: 20px;
@@ -154,13 +180,17 @@ button[type="submit"]:hover {
 }
 
 .mice {
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: auto;
 }
 
-.mice1, .mice2, .mice3, .mice4, .mice5 {
+.mice1,
+.mice2,
+.mice3,
+.mice4,
+.mice5 {
   display: block;
   width: 20% !important;
   height: 20%;
@@ -177,7 +207,7 @@ button[type="submit"]:hover {
   margin-right: auto;
 }
 .userbio {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 33.33%;
@@ -192,7 +222,7 @@ button[type="submit"]:hover {
   flex-direction: row;
   justify-content: center;
   text-align: center;
-  width:33.33%;
+  width: 33.33%;
   position: relative;
   margin-left: 25px;
 }
@@ -204,7 +234,8 @@ button[type="submit"]:hover {
   transform: translate(-50%, -50%);
 }
 
-.hLR, .dLL{
+.hLR,
+.dLL {
   margin-bottom: 20px;
   margin-top: 20px;
 }
@@ -215,18 +246,18 @@ button[type="submit"]:hover {
 }
 
 .rightside {
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: space-between;
   align-self: center;
-  width:33.33%;
+  width: 33.33%;
   margin-right: 30px;
   margin-left: 30px;
 }
 
 .placeFrequented {
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: center;
   margin-bottom: 20px;
@@ -234,14 +265,14 @@ button[type="submit"]:hover {
 }
 
 .summaryDetail {
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: center;
   border-style: outset;
 }
 
 .rating {
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: center;
   margin-bottom: 20px;
@@ -249,12 +280,12 @@ button[type="submit"]:hover {
 }
 
 .userDetail {
-  display:flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
 }
 .infosec {
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: center;
 }

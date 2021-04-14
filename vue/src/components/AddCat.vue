@@ -102,7 +102,8 @@ export default {
           console.log(response.status);
           if (response.status == "201") {
             //success
-            this.$router.push("/account");
+            // this.$router.push("/catdetails/" + this.$store.state.user.id);
+            this.$router.push("/cats");
           }
         })
         .catch((error) => {
