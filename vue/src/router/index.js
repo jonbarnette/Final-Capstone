@@ -8,6 +8,7 @@ import store from '../store/index'
 import CatList from '../views/CatList.vue'
 import Account from '../views/Account.vue'
 import CatDetails from '../views/CatDetails.vue'
+import About from '../views/About.vue'
 
 Vue.use(Router)
 
@@ -64,7 +65,7 @@ const router = new Router({
             }
         },
         {
-          path: "/account/",
+          path: "/account",
           name: "account",
           component: Account,
           meta: {
@@ -79,7 +80,14 @@ const router = new Router({
             requiresAuth: false
         }
     },
-    
+    {
+        path: "/about",
+        name: "about",
+        component: About,
+        meta: {
+            requiresAuth: false
+        }
+    },
 
     ]
 })

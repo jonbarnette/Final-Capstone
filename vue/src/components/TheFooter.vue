@@ -12,8 +12,9 @@
   <div class="container1">
       <div id="copycat">&#169; {{ copyText }}</div>
         <div id="contact"><a href="#" style="text-decoration: none;">Contact</a></div>
-        <div id="aboutUs"><a a href="#" style="text-decoration: none;">About Us</a></div>
+        <router-link style="text-decoration: none;" v-bind:to="{ name: 'about' }"><a>About Us</a></router-link>
         <div id="admin"><a href="#" style="text-decoration: none;">Admin Login</a></div>
+        
   </div>
 </div>
 </template>
