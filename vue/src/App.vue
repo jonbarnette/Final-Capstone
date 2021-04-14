@@ -32,7 +32,7 @@ export default {
 <style>
 * {
   color: #163da1;
-  background-color: #d6dae6;
+  background-color:white;
 }
 
 .app {
