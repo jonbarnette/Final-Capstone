@@ -34,22 +34,6 @@
           </div>
         </div>
 
-        <div
-          class="placeFrequented"
-          v-for="cat in catsArray"
-          v-bind:key="cat.catId"
-        >
-          <h3>Last Seen</h3>
-          <p>{{ cat.address }}</p>
-        </div>
-
-        <div
-          class="summaryDetail"
-          v-for="cat in catsArray"
-          v-bind:key="cat.catId"
-        >
-          <h3>More About Me</h3>
-          <p>{{ cat.summary }}</p>
         <div class="placeFrequented" v-for="cat in catsArray" v-bind:key="cat.catId">
           <h3 class="last">Last Seen</h3>
           <p Class="last">{{ cat.address }}</p>
@@ -60,7 +44,7 @@
           <p class="more">{{ cat.summary }}</p>
         </div>
       </div>
-    </div>
+    
     <div class="alert alert-danger" role="alert" v-if="registrationErrors">
       {{ registrationErrorMsg }}
     </div>
