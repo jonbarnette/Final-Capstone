@@ -19,7 +19,7 @@
     <div class="cta">
       <p>
         At TabbyPro we don’t give up on our feline companions, rather we commit
-        our services to their future and continued success.
+        our services to their future and continued success
       </p>
     </div>
   </div>
