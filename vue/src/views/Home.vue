@@ -1,19 +1,27 @@
 <template>
   <div class="bgimg">
+    
     <div class="frontpageCats">
       <div class="cats">
         <img class="catpic" src="../Assets/CatUsers/HomepageCat.jpg" />
         <p id="work1">Hi I'm looking for work!</p>
       </div>
-      
+
       <div class="cats2">
         <img class="catpic" src="../Assets/CatUsers/HomepageCat2.jpg" />
         <p id="work2">Do you have a position open?</p>
       </div>
+      
     </div>
     <!-- <video autoplay muted loop id="myVideo">
       <source src="../Assets/computer_cat.mp4" type="video/mp4" />
     </video> -->
+    <div class="cta">
+      <p>
+        At TabbyPro we don’t give up on our feline companions, rather we commit
+        our services to their future and continued success.
+      </p>
+    </div>
   </div>
 </template>
 
@@ -42,9 +50,6 @@ export default {
   flex-direction: row;
   position: relative;
   background-color: transparent;
-  
-  
- 
 }
 
 .catpic {
@@ -112,4 +117,12 @@ export default {
   /* transform: translate(-50% ,-50%); */
 }
 
+.cta {
+  display:flex;
+  justify-content: center;
+  font-family: "Work Sans",sans-serif;
+  text-transform:uppercase;
+  font-size: 30px;
+
+}
 </style>
