@@ -186,6 +186,16 @@ h1 {
   font-family: "Ledger", serif;
   font-size: 3rem;
 }
+.rightside > .rating > h3 {
+  font-size: 30px;
+}
+.rightside > .placeFrequented > h3 {
+  font-size: 30px;
+}
+.rightside > .summaryDetail > h3 {
+  font-size: 30px;
+}
+
   /* DETAILS SECTION */
 .desc, .mice {
   display:flex;
@@ -231,6 +241,7 @@ h1 {
   margin-left: 30px;
   justify-content: flex-start;
   text-align: center;
+  font-size: 25px;
 }
 .lives {
   display: flex;
@@ -250,14 +261,22 @@ h1 {
   height: auto;
   background: transparent;
 }
+.lives > .dLives > h2 {
+  font-size: 30px;
+}
+.lives > .dLives > h1 {
+  font-size: 40px;
+}
 .hLR, .hLR2, .dLL, .occu, .rat, .last, .more{
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 20px;
+  margin-top: 15px;
   background: transparent;
   display: flex;
   flex-direction: column;
   font-family: "Ledger", serif;
+  font-size: 18px;
 }
 .rightside {
   display: flex;

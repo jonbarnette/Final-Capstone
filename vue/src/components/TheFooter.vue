@@ -52,7 +52,8 @@ export default {
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
-   transition: background 1s, transform 1s;
+  background: transparent;
+  transition: background 1s, transform 1s;
 }
 .fa:hover {
     opacity: 0.7;
