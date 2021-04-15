@@ -7,7 +7,7 @@
       <router-link class="link1" style="text-decoration: none;" v-bind:to="{ name: 'home' }"><a>HOME</a></router-link>
       <router-link class="link2" style="text-decoration: none;" v-bind:to="{ name: 'cats' }"><a>CAT LIST</a></router-link>
        
-      <router-link class="link3" style="text-decoration: none;" v-bind:to="{ name: 'account' }" v-if="$store.state.token != ''"><a>ACCOUNT</a></router-link>
+      <router-link class="link3" style="text-decoration: none;" v-bind:to="{ name: 'addcat' }" v-if="$store.state.token != ''"><a>ACCOUNT</a></router-link>
       <router-link class="link4" style="text-decoration: none;" v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''"><a>LOGIN</a></router-link>
       <router-link class="link4" style="text-decoration: none;" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''"><a>LOGOUT</a></router-link>
     </div>
