@@ -53,8 +53,12 @@ export default {
   justify-content: center;
   align-content: center;
   margin: 10px;
-  transition: transform 1.2s ease 0s;
+  transition: transform 1.1s ease 0s;
   border: 1.5px solid black;
+}
+
+.catpic:hover {
+  transform: scale(1.015);
 }
 
 .cats {
@@ -69,13 +73,13 @@ export default {
   width: 50%;
 }
 
-.cats:hover {
+/* .cats:hover {
   transform: scale(1.02);
 }
 
 .cats2:hover {
   transform: scale(1.02);
-}
+} */
 
 #work1 {
   display: flex;
