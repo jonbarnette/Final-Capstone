@@ -61,6 +61,7 @@ INSERT INTO users (username,password_hash,role) VALUES ('meowly','$2a$08$UkVvwpU
 INSERT INTO users (username,password_hash,role) VALUES ('catwick','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('katty','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('jennipurr','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
+INSERT INTO users (username,password_hash,role) VALUES ('cindy','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 
 -- Inserting users into CATLIST table
 INSERT INTO catlist (name,imageName,lives,breed,color,occupation,tagline,address,summary) VALUES ('Admin','1001.jpg','9','Human','n/a','Recruiter','Helping put the floofsters to work!','Working','I became a crazy cat person many years ago, it all began with one fluffball. I only have 30 but plan for more!');
@@ -71,5 +72,6 @@ INSERT INTO catlist (name,imageName,lives,breed,color,occupation,tagline,address
 INSERT INTO catlist (name,imageName,lives,breed,color,occupation,tagline,address,summary) VALUES ('Catwick Swayze','1014.jpg','1','Sphinx','White/Grey','Dancer','Dancing Dirty under the street lights!','MeowTown Philly','When the devil went down to Georgia, I ghosted him and danced him into the grave! Great in a bar or on the farm!');
 INSERT INTO catlist (name,imageName,lives,breed,color,occupation,tagline,address,summary) VALUES ('Katty Purry','1012.jpg','7','Scottish Fold','Grey','Teacher','EduCation is my passion!','Prowling around classrooms','The teachers pet has become the teacher, one more step to taking over the world. I like to teach the kittens about attack mode.');
 INSERT INTO catlist (name,imageName,lives,breed,color,occupation,tagline,address,summary) VALUES ('Jennipurr Aniston','1005.jpg','3','Calico','Multi','Plumber','I do not like water!','Chasing a mouse down the street','One time I was in the bathroom walking on the side of the tub. The human claims I slipped but I am sure he pushed me. Anyways I did not think I was gonna make it out alive. Traggic.');
+INSERT INTO catlist (name,imageName,lives,breed,color,occupation,tagline,address,summary) VALUES ('Cindy Clawford','1019.jpg','6','Unknown','Grey','Model','Puts the bass in her walk!','On the runway','Enjoys coldbrew coffee and being the first one to discover a old dive bar. Sells refurbished Polaroid cameras on Etsy and is currently working a on cookbook of vegan meals prepared entirely on a 1992 Easy-Bake Oven. Claims she has no idea who the Jonas Brothers are.');
 
 COMMIT TRANSACTION;
