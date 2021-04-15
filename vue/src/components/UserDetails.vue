@@ -63,9 +63,9 @@
     </div>
 
     <div class="dNe">
-    <div>
+    <!-- <div>
       <router-link :to="{ name: 'addcat' }">Edit</router-link>
-    </div>
+    </div> -->
     <!-- DELETE BUTTON -->
     <div role="alert" v-if="registrationErrors">
       {{ registrationErrorMsg }}
