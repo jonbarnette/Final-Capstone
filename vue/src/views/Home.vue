@@ -7,7 +7,7 @@
       </div>
       
       <div class="cats2">
-        <img class="catpic" src="../Assets/CatUsers/AlleyCat.jpg" />
+        <img class="catpic" src="../Assets/CatUsers/HomepageCat2.jpg" />
         <p id="work2">Do you have a position open?</p>
       </div>
     </div>
