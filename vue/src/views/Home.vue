@@ -2,11 +2,12 @@
   <div class="bgimg">
     <div class="frontpageCats">
       <div class="cats">
-        <img src="../Assets/CatUsers/HomepageCat.jpg" />
+        <img class="catpic" src="../Assets/CatUsers/HomepageCat.jpg" />
+        <p id="work1">Hi I'm looking for work!</p>
       </div>
-      <p id="work1">Hi I'm looking for work!</p>
-      <div class="cats">
-        <img src="../Assets/CatUsers/AlleyCat.jpg" />
+      
+      <div class="cats2">
+        <img class="catpic" src="../Assets/CatUsers/AlleyCat.jpg" />
         <p id="work2">Do you have a position open?</p>
       </div>
     </div>
@@ -46,7 +47,7 @@ export default {
  
 }
 
-.cats {
+.catpic {
   /* flex: 0 1 30%; */
   align-items: space-around;
   justify-content: center;
@@ -54,41 +55,57 @@ export default {
   margin: 10px;
   transition: transform 1.2s ease 0s;
   border: 1.5px solid black;
-  object-fit: cover;
-  
-   
+}
+
+.cats {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.cats2 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
 
 .cats:hover {
   transform: scale(1.02);
 }
 
+.cats2:hover {
+  transform: scale(1.02);
+}
+
 #work1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
   position: absolute;
-  top: 22%;
-  left: auto;
-  padding-left: 40rem;
-  z-index: 100;
+  text-align: center;
   color: white;
   background-color: transparent;
   font-size: 24px;
   font-weight: bold;
   /* transform: translate(-50% ,-50%); */
-  overflow: auto;
 }
 #work2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
   position: absolute;
-  top: 35%;
-  right: auto;
-  padding-left: 5rem;
-  z-index: 100;
+  text-align: center;
   color: white;
   background-color: transparent;
   font-size: 24px;
   font-weight: bold;
   /* transform: translate(-50% ,-50%); */
-  overflow: auto;
- 
 }
 
 </style>
