@@ -167,7 +167,7 @@ export default {
 
   /* DELETE BUTTON */
 button[type="submit"] {
-  background-color: #d6dae6;
+  background-color: white;
   color: white;
   border: none;
   border-radius: 4px;
